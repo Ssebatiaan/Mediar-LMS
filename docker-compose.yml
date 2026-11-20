@@ -1,0 +1,96 @@
+# Mediar - entorno local de demostración (Moodle 5.3 LTS)
+#
+#   docker compose up -d          levantar (la primera vez instala Moodle, tarda unos minutos)
+#   docker compose logs -f moodle ver el avance
+#   docker compose down           detener conservando los datos
+#   docker compose down -v        BORRAR todo (cursos, usuarios, base de datos)
+#
+# Moodle: http://localhost:8080   Correo de prueba: http://localhost:8025
+# Credenciales: ver .env
+
+name: mediar
+
+services:
+  db:
+    # Moodle 5.3 exige PostgreSQL >= 17
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: moodle
+      POSTGRES_USER: moodle
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U moodle -d moodle"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  # Buzón de correo de prueba: captura todos los correos que envía Moodle
+  # (notificaciones, recuperación de contraseña). Interfaz en http://localhost:${MAILPIT_PORT}
+  mailpit:
+    image: axllent/mailpit:v1.34
+    restart: unless-stopped
+    ports:
+      - "${MAILPIT_PORT}:8025"
+
+  moodle:
+    # erseco/alpine-moodle:5.3.1 + datos ICU completos (fechas en español). Ver docker/moodle/Dockerfile.
+    build: ./docker/moodle
+    image: mediar/moodle:5.3.1
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      # El puerto externo DEBE ser igual al interno (8080): nginx de la imagen
+      # informa a Moodle el puerto interno y, si difiere de SITE_URL, Moodle
+      # entra en un bucle de redirecciones. Para otro puerto: poner un proxy.
+      - "8080:8080"
+    environment:
+      DB_TYPE: pgsql
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: moodle
+      DB_USER: moodle
+      DB_PASS: ${DB_PASSWORD}
+      DB_PREFIX: mdl_
+      SITE_URL: http://localhost:8080
+      MOODLE_USERNAME: ${MOODLE_ADMIN_USER}
+      MOODLE_PASSWORD: ${MOODLE_ADMIN_PASSWORD}
+      MOODLE_EMAIL: admin@mediar.local
+      MOODLE_LANGUAGE: es
+      # Sin espacios: el script de instalación de la imagen no los soporta.
+      # El nombre visible definitivo se ajusta luego desde la administración.
+      MOODLE_SITENAME: Mediar
+      MOODLE_MAIL_NOREPLY_ADDRESS: noreply@mediar.local
+      MOODLE_MAIL_PREFIX: "[Mediar]"
+      SMTP_HOST: mailpit
+      SMTP_PORT: 1025
+      SMTP_USER: ""
+      SMTP_PASSWORD: ""
+      SMTP_PROTOCOL: ""
+      # Modo desarrollador (muestra errores). Poner en false para presentar la demo.
+      DEBUG: ${MOODLE_DEBUG}
+      date_timezone: America/Bogota
+      intl_default_locale: es_CO
+      # Límite de subida (videos y recursos de los profesores)
+      upload_max_filesize: 200M
+      post_max_size: 200M
+      client_max_body_size: 200M
+      memory_limit: 512M
+    volumes:
+      - moodle_data:/var/www/moodledata
+      - moodle_html:/var/www/html
+      # Código fuente de nuestros plugins, SOLO LECTURA y fuera del árbol de Moodle.
+      # La imagen sincroniza su código con `rsync --delete`; montar aquí dentro de
+      # /var/www/html podría borrar archivos del host. scripts/deploy.sh los copia.
+      - ./plugins:/opt/mediar/plugins:ro
+      - ./scripts:/opt/mediar/scripts:ro
+      - ./assets:/opt/mediar/assets:ro
+
+volumes:
+  db_data:
+  moodle_data:
+  moodle_html:

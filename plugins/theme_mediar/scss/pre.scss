@@ -1,0 +1,44 @@
+// Tema Mediar - variables de marca.
+// Se compilan ANTES del preset de Boost, así que reemplazan sus valores !default.
+
+// ---------------------------------------------------------------------------
+// Paleta Mediar
+// ---------------------------------------------------------------------------
+$mediar-naranja:        #FF5D1C;   // color identificador (botones, indicadores, selección)
+$mediar-gris-oscuro:    #252525;   // barra superior, textos fuertes
+$mediar-fondo:          #F5F5F5;   // fondo de las páginas
+$mediar-blanco:         #FFFFFF;
+$mediar-gris:           #777777;   // textos secundarios
+
+// Escala del naranja (derivada del #FF5D1C) para estados y textos.
+$mediar-naranja-50:  #FFF1EB;
+$mediar-naranja-100: #FFE0D2;
+$mediar-naranja-200: #FFC1A5;
+$mediar-naranja-300: #FF9B6E;
+$mediar-naranja-400: #FF7A45;
+$mediar-naranja-600: #E04A0C;
+$mediar-naranja-700: #B83A08;   // texto/enlaces naranja sobre blanco (contraste AA)
+$mediar-naranja-800: #8A2C07;
+$mediar-naranja-900: #5C1D05;
+
+$mediar-fuente-titulos: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+// ---------------------------------------------------------------------------
+// Variables de Bootstrap / Boost
+// ---------------------------------------------------------------------------
+$primary:   $mediar-naranja;
+$dark:      $mediar-gris-oscuro;
+$body-bg:   $mediar-fondo;
+$link-color: $mediar-naranja-700;
+
+// Texto blanco sobre los botones naranja (identidad de la marca). El naranja de marca
+// da 3:1 con blanco; Bootstrap exige 4.5 por defecto y pondría texto negro.
+$min-contrast-ratio: 3;
+
+$border-radius:    .75rem;
+$border-radius-sm: .5rem;
+$border-radius-lg: 1rem;
+
+$headings-font-family: $mediar-fuente-titulos;
+$headings-font-weight: 700;
+$btn-font-weight: 600;

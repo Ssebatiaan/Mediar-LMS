@@ -1,0 +1,8 @@
+{
+  "name": "mediar-capturas",
+  "private": true,
+  "description": "Capturas de pantalla y diagnóstico de CSS del Moodle local usando el Edge instalado (sin descargar navegadores).",
+  "dependencies": {
+    "playwright-core": "1.64.1"
+  }
+}

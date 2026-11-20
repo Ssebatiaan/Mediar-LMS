@@ -1,0 +1,8 @@
+# Finales de línea LF siempre: los scripts se ejecutan dentro del contenedor Linux
+# (con CRLF, sh y PHP fallan). Evita la conversión automática de Git en Windows.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.woff2 binary

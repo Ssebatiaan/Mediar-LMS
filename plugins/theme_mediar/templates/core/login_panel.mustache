@@ -1,0 +1,53 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+}}
+{{!
+    @template core/login_panel
+
+    MEDIAR: panel izquierdo de la página de acceso (sobrescribe el de Boost).
+    Si el sitio tiene "instrucciones de acceso" configuradas, se muestran en lugar del texto.
+
+    Example context (json):
+    {
+        "leftinstructions": ""
+    }
+}}
+<div class="mediar-login-panel">
+    <div class="mediar-login-panel-icono" aria-hidden="true"></div>
+    {{^leftinstructions}}
+        <p class="mediar-login-eyebrow">{{#str}}login:eyebrow, theme_mediar{{/str}}</p>
+        <h1 class="mediar-login-title">{{#str}}login:title, theme_mediar{{/str}}</h1>
+        <p class="mediar-login-description">{{#str}}login:description, theme_mediar{{/str}}</p>
+        <div class="mediar-login-stats">
+            <div class="mediar-login-stat">
+                <strong>{{#str}}login:stat1value, theme_mediar{{/str}}</strong>
+                <span>{{#str}}login:stat1, theme_mediar{{/str}}</span>
+            </div>
+            <div class="mediar-login-stat">
+                <strong>{{#str}}login:stat2value, theme_mediar{{/str}}</strong>
+                <span>{{#str}}login:stat2, theme_mediar{{/str}}</span>
+            </div>
+            <div class="mediar-login-stat">
+                <strong>{{#str}}login:stat3value, theme_mediar{{/str}}</strong>
+                <span>{{#str}}login:stat3, theme_mediar{{/str}}</span>
+            </div>
+        </div>
+    {{/leftinstructions}}
+    {{#leftinstructions}}
+        <div class="mediar-login-description">{{{leftinstructions}}}</div>
+    {{/leftinstructions}}
+    <p class="mediar-login-tagline">{{#str}}login:tagline, theme_mediar{{/str}}</p>
+</div>

@@ -1,0 +1,560 @@
+# MEDIAR
+## Plataforma de gestión académica, evaluaciones y seguimiento estudiantil
+
+**Documento de contexto general y lineamientos iniciales de desarrollo**
+
+---
+
+# 1. PRESENTACIÓN DEL PROYECTO
+
+Se plantea desarrollar una plataforma educativa para **Mediar**, una empresa dedicada a la preparación académica de estudiantes para las pruebas Saber 11 (ICFES).
+
+El proyecto consiste en implementar una plataforma LMS (Learning Management System) utilizando **Moodle como núcleo tecnológico**, con personalizaciones que permitan adaptarlo a las necesidades académicas y administrativas de Mediar.
+
+La plataforma no debe limitarse a ofrecer cursos virtuales. Su propósito es convertirse en una herramienta integral para gestionar el proceso académico, realizar evaluaciones, administrar simulacros y hacer seguimiento al rendimiento de los estudiantes.
+
+Se busca que los profesores puedan administrar sus asignaturas, publicar evaluaciones y analizar los resultados de sus grupos, mientras que los estudiantes puedan acceder a sus cursos, desarrollar actividades y consultar su progreso.
+
+Adicionalmente, los administradores deberán contar con herramientas para supervisar el funcionamiento académico de la institución.
+
+# 2. OBJETIVOS DEL PROYECTO
+
+## 2.1. Objetivo general
+
+Desarrollar una plataforma educativa basada en Moodle que permita a Mediar centralizar la gestión académica, la administración de cursos, la aplicación de evaluaciones y el seguimiento del rendimiento estudiantil.
+
+## 2.2. Objetivos específicos
+
+- Centralizar la información de estudiantes, profesores y cursos.
+- Organizar la formación académica por asignaturas.
+- Implementar un test inicial de personalidad.
+- Permitir la creación y publicación de simulacros por parte de los profesores.
+- Automatizar la calificación de las evaluaciones.
+- Registrar el historial académico de los estudiantes.
+- Generar estadísticas individuales y grupales.
+- Identificar fortalezas y debilidades académicas.
+- Facilitar el seguimiento del progreso durante el proceso de preparación para el ICFES.
+- Proporcionar una interfaz intuitiva y moderna que represente la identidad de Mediar.
+
+# 3. FUNCIONAMIENTO GENERAL DEL SISTEMA
+
+## 3.1. Test de personalidad inicial
+
+Al comenzar el proceso académico, los estudiantes realizarán un test de personalidad inicial.
+
+El objetivo será conocer algunas características individuales, preferencias y tendencias de personalidad de cada estudiante, con el propósito de proporcionar información adicional para su proceso de acompañamiento académico.
+
+Como referencia inicial para la DEMO se utilizará el modelo **MBTI (Myers-Briggs Type Indicator)**, que contempla 16 tipos de personalidad a partir de cuatro dimensiones:
+
+- Introversión (I) / Extraversión (E).
+- Sensación (S) / Intuición (N).
+- Pensamiento (T) / Sentimiento (F).
+- Juicio (J) / Percepción (P).
+
+### Funcionamiento esperado
+
+1. El estudiante ingresa a la plataforma.
+2. Encuentra el test de personalidad inicial.
+3. Responde una serie de preguntas con opciones de respuesta.
+4. El sistema procesa las respuestas.
+5. Se genera un resultado correspondiente al modelo implementado.
+6. El resultado queda asociado al perfil del estudiante.
+7. Los usuarios autorizados pueden consultar los resultados.
+
+### Alcance para la DEMO
+
+Se desarrollará una simulación funcional de un test basado en el modelo MBTI, incluyendo:
+
+- Presentación de preguntas.
+- Opciones de respuesta.
+- Navegación entre preguntas.
+- Registro de respuestas.
+- Procesamiento de resultados.
+- Presentación del perfil obtenido.
+- Almacenamiento de resultados.
+
+### Flexibilidad del instrumento
+
+El MBTI será únicamente una referencia inicial para la demostración.
+
+La empresa Mediar tendrá la decisión final sobre qué instrumento de personalidad desea implementar. Por esta razón, el sistema deberá permitir sustituir el test por otro modelo en el futuro.
+
+Se deberá procurar que las preguntas, respuestas, dimensiones y reglas de interpretación sean configurables, evitando que toda la lógica del sistema dependa exclusivamente del MBTI.
+
+**Consideración:** El MBTI es un instrumento comercial protegido. Para la DEMO se deberán utilizar preguntas originales de demostración y una metodología claramente identificada como ilustrativa, sin reproducir materiales oficiales ni presentarla como una aplicación oficial del instrumento sin la autorización correspondiente.
+
+El test de personalidad será independiente de las evaluaciones académicas y no se utilizará como diagnóstico psicológico ni como medida de capacidad intelectual.
+
+## 3.2. Organización de cursos por asignatura
+
+La formación académica estará organizada mediante cursos independientes dentro de Moodle.
+
+Las asignaturas estarán relacionadas con las áreas evaluadas en las pruebas Saber 11.
+
+Inicialmente se contemplan:
+
+- Matemáticas.
+- Lectura Crítica (Castellano).
+- Inglés.
+- Ciencias Sociales y Ciudadanas.
+- Ciencias Naturales.
+
+Cada asignatura tendrá uno o varios profesores responsables.
+
+Los estudiantes estarán matriculados en los cursos que correspondan a su proceso de formación.
+
+Cada curso tendrá su propio espacio de trabajo, donde se podrán publicar evaluaciones, simulacros y otros recursos académicos.
+
+## 3.3. Gestión de simulacros y evaluaciones
+
+Esta será una de las funcionalidades centrales de la plataforma.
+
+Cada profesor deberá poder crear, administrar y publicar simulacros correspondientes a su asignatura.
+
+### Funcionamiento esperado
+
+1. El profesor ingresa a su curso.
+2. Selecciona la opción para crear una evaluación.
+3. Configura el nombre y la descripción del simulacro.
+4. Agrega preguntas y opciones de respuesta.
+5. Define las respuestas correctas cuando corresponda.
+6. Configura las condiciones de presentación.
+7. Publica la evaluación.
+8. Los estudiantes matriculados pueden acceder a ella.
+9. Los estudiantes presentan el simulacro.
+10. Moodle registra las respuestas y realiza la calificación automática.
+11. El profesor consulta los resultados individuales y grupales.
+
+### Configuraciones de los simulacros
+
+Se contempla la posibilidad de configurar:
+
+- Fecha de apertura.
+- Fecha de cierre.
+- Tiempo disponible.
+- Cantidad de preguntas.
+- Calificación máxima.
+- Número de intentos permitidos.
+- Orden aleatorio de preguntas.
+- Orden aleatorio de respuestas.
+- Retroalimentación.
+- Visibilidad de resultados y respuestas correctas.
+
+Estas configuraciones deberán aprovechar las funcionalidades nativas de Moodle siempre que sea posible.
+
+### Tipos de preguntas
+
+Inicialmente se priorizarán:
+
+- Selección múltiple con única respuesta.
+- Selección múltiple con varias respuestas.
+- Verdadero o falso.
+- Preguntas de respuesta corta.
+
+La estructura podrá ampliarse según las necesidades de los profesores.
+
+## 3.4. Seguimiento del rendimiento académico
+
+Una de las características más importantes del proyecto será la capacidad de analizar los resultados obtenidos por los estudiantes.
+
+No se busca únicamente almacenar calificaciones. Se pretende transformar los resultados de los simulacros en información útil para los profesores y administradores.
+
+### Rendimiento individual
+
+Cada estudiante deberá contar con un historial donde se puedan consultar:
+
+- Simulacros realizados.
+- Calificaciones obtenidas.
+- Porcentaje de respuestas correctas.
+- Evolución de resultados.
+- Áreas con mejor desempeño.
+- Áreas con mayores dificultades.
+- Historial de evaluaciones.
+
+### Rendimiento grupal
+
+Los profesores deberán disponer de un panel con estadísticas de su curso.
+
+Se contemplan indicadores como:
+
+- Cantidad de estudiantes evaluados.
+- Promedio general del grupo.
+- Calificación más alta.
+- Calificación más baja.
+- Distribución de resultados.
+- Porcentaje de respuestas correctas e incorrectas.
+- Preguntas con mayor dificultad.
+- Competencias con menor rendimiento.
+- Evolución del grupo entre simulacros.
+
+### Análisis por competencias
+
+Cuando los simulacros tengan sus preguntas asociadas a temas o competencias, el sistema deberá permitir analizar el rendimiento en cada uno de ellos.
+
+Por ejemplo, en Matemáticas:
+
+- Álgebra.
+- Geometría.
+- Estadística.
+- Trigonometría.
+
+El profesor podrá identificar qué contenidos necesitan mayor refuerzo.
+
+Esta clasificación deberá ser configurable, ya que las competencias y categorías serán diferentes dependiendo de la asignatura.
+
+# 4. PERFILES DE USUARIO Y PERMISOS
+
+La plataforma contemplará inicialmente tres perfiles principales.
+
+## 4.1. Administrador
+
+Será responsable de la gestión general de la plataforma.
+
+Funciones:
+
+- Crear y administrar cursos.
+- Registrar profesores y estudiantes.
+- Editar y desactivar usuarios.
+- Asignar profesores a las asignaturas.
+- Matricular estudiantes.
+- Consultar información académica general.
+- Supervisar simulacros y evaluaciones.
+- Consultar estadísticas generales.
+- Administrar configuraciones de la plataforma.
+
+## 4.2. Profesor
+
+Tendrá acceso a los cursos que tenga asignados.
+
+Funciones:
+
+- Consultar sus cursos.
+- Consultar los estudiantes matriculados.
+- Crear simulacros.
+- Administrar bancos de preguntas.
+- Publicar y modificar evaluaciones.
+- Consultar calificaciones.
+- Revisar resultados individuales.
+- Consultar estadísticas grupales.
+- Identificar dificultades académicas.
+- Hacer seguimiento al progreso de sus estudiantes.
+
+## 4.3. Estudiante
+
+Tendrá acceso a los cursos en los que se encuentre matriculado.
+
+Funciones:
+
+- Iniciar sesión.
+- Consultar sus cursos.
+- Acceder al test de personalidad.
+- Consultar actividades disponibles.
+- Presentar simulacros.
+- Consultar sus calificaciones.
+- Revisar su historial académico.
+- Consultar estadísticas de su propio rendimiento.
+
+Los permisos deberán configurarse para evitar que los estudiantes accedan a información privada de otros compañeros o a herramientas administrativas.
+
+# 5. DASHBOARDS Y EXPERIENCIA DE USUARIO
+
+La plataforma deberá contar con paneles de inicio diferenciados según el perfil de usuario.
+
+## 5.1. Dashboard del estudiante
+
+Al ingresar, el estudiante encontrará una vista general de su proceso académico.
+
+Elementos sugeridos:
+
+- Saludo e información del estudiante.
+- Cursos matriculados.
+- Próximos simulacros.
+- Actividades pendientes.
+- Últimas calificaciones.
+- Acceso al test de personalidad.
+- Resumen de progreso académico.
+- Notificaciones.
+
+## 5.2. Dashboard del profesor
+
+El profesor tendrá una vista enfocada en la administración académica.
+
+Elementos sugeridos:
+
+- Cursos asignados.
+- Cantidad de estudiantes por curso.
+- Evaluaciones publicadas.
+- Próximas actividades.
+- Últimos resultados.
+- Promedios generales.
+- Acceso rápido a crear simulacros.
+- Panel de estadísticas.
+
+## 5.3. Dashboard del administrador
+
+Permitirá visualizar el estado general de la institución.
+
+Elementos sugeridos:
+
+- Total de estudiantes.
+- Total de profesores.
+- Cursos activos.
+- Asignaturas disponibles.
+- Simulacros publicados.
+- Evaluaciones realizadas.
+- Estadísticas generales.
+- Acceso a la gestión de usuarios y cursos.
+
+# 6. SISTEMA DE ESTADÍSTICAS Y VISUALIZACIÓN
+
+Se busca que los datos académicos puedan representarse mediante elementos visuales.
+
+Se podrán utilizar:
+
+- Gráficos de barras.
+- Gráficos de líneas.
+- Indicadores porcentuales.
+- Tablas de resultados.
+- Rankings académicos cuando sean pertinentes.
+- Comparaciones entre simulacros.
+
+Se deberá permitir consultar la evolución de los resultados durante diferentes periodos.
+
+Por ejemplo, comparar el primer simulacro de Matemáticas con el segundo y el tercero para observar si el grupo ha mejorado.
+
+También se deberá contemplar la posibilidad de exportar resultados, por ejemplo, a Excel o PDF, según los permisos del usuario.
+
+# 7. IDENTIDAD VISUAL Y DISEÑO
+
+La plataforma deberá respetar la identidad visual de Mediar.
+
+El logotipo proporcionado será la referencia principal para desarrollar la interfaz.
+
+### 7.1. Paleta de colores
+
+Se propone la siguiente paleta inicial:
+
+- Naranja principal: #FF5D1C.
+- Gris oscuro: #252525.
+- Fondo claro: #F5F5F5.
+- Blanco: #FFFFFF.
+- Gris secundario: #777777.
+
+El naranja será el color identificador de Mediar.
+
+Se utilizará principalmente en:
+
+- Botones principales.
+- Indicadores importantes.
+- Elementos seleccionados.
+- Barras de progreso.
+- Iconografía destacada.
+- Acciones principales.
+
+Los fondos deberán mantener una apariencia limpia y profesional.
+
+### 7.2. Estilo visual
+
+Se busca una interfaz:
+
+- Moderna.
+- Minimalista.
+- Profesional.
+- Intuitiva.
+- Organizada.
+- Adaptable a diferentes dispositivos.
+
+Se tomará como referencia visual la plataforma SAVIO de la Universidad Tecnológica de Bolívar, especialmente por su distribución de cursos, tarjetas, paneles de actividades y navegación.
+
+No se pretende copiar su diseño, sino tomarlo como referencia para construir una experiencia propia de Mediar.
+
+### 7.3. Diseño adaptable
+
+La plataforma deberá funcionar correctamente en:
+
+- Computadores de escritorio.
+- Portátiles.
+- Tabletas.
+- Teléfonos móviles.
+
+Se dará prioridad a una buena experiencia de navegación para los estudiantes.
+
+# 8. ALCANCE DE LA PRIMERA VERSIÓN (DEMO)
+
+El desarrollo comenzará con una demostración funcional que permita visualizar y probar el concepto general.
+
+La primera versión deberá priorizar:
+
+1. Instalación y configuración inicial de Moodle.
+2. Personalización visual con la identidad de Mediar.
+3. Inicio de sesión.
+4. Perfiles de administrador, profesor y estudiante.
+5. Dashboard diferenciado por usuario.
+6. Organización de cursos por asignatura.
+7. Asignación de profesores y estudiantes.
+8. Test de personalidad de demostración basado en MBTI.
+9. Creación y publicación de simulacros.
+10. Presentación de simulacros por los estudiantes.
+11. Calificación automática.
+12. Consulta de resultados individuales.
+13. Estadísticas básicas por curso.
+14. Visualización del progreso académico.
+
+La DEMO deberá ser funcional y permitir recorrer el flujo principal del sistema.
+
+No es necesario desarrollar todas las funcionalidades avanzadas desde el principio.
+
+# 9. ARQUITECTURA Y LINEAMIENTOS TÉCNICOS
+
+Moodle será el núcleo del proyecto.
+
+Se deberá estudiar qué funcionalidades pueden resolverse mediante herramientas nativas y cuáles necesitan personalización.
+
+Se deberán evaluar alternativas como:
+
+- Personalización de temas de Moodle.
+- Roles y capacidades nativas.
+- Actividades de cuestionario (Quiz).
+- Banco de preguntas.
+- Libro de calificaciones.
+- Reportes y estadísticas.
+- Plugins existentes.
+- Plugins personalizados cuando sean necesarios.
+- APIs y servicios web de Moodle, si se requiere integración externa.
+
+### Reglas de desarrollo
+
+1. No reconstruir desde cero funcionalidades que Moodle ya ofrece.
+2. Mantener una arquitectura modular.
+3. Evitar modificaciones directas al núcleo de Moodle.
+4. Priorizar plugins y mecanismos de extensión compatibles.
+5. Documentar el código.
+6. Mantener buenas prácticas de seguridad.
+7. Controlar los permisos de cada usuario.
+8. Evitar duplicar información innecesariamente.
+9. Procurar que las personalizaciones sean escalables.
+10. Considerar copias de seguridad y recuperación de información.
+
+La versión de Moodle, el servidor, el alojamiento y las tecnologías complementarias todavía deberán definirse.
+
+# 10. PROTECCIÓN DE DATOS Y SEGURIDAD
+
+La plataforma manejará información personal y académica de estudiantes.
+
+Por lo tanto, deberá contemplar:
+
+- Autenticación de usuarios.
+- Control de acceso por roles.
+- Protección de información académica.
+- Almacenamiento seguro de contraseñas mediante los mecanismos de Moodle.
+- Conexión HTTPS en producción.
+- Copias de seguridad.
+- Restricción de acceso a calificaciones de terceros.
+- Gestión adecuada de datos personales.
+- Consentimiento e información sobre el tratamiento de datos cuando corresponda.
+
+Se deberá considerar especialmente la protección de datos de estudiantes menores de edad y el cumplimiento de la normativa colombiana aplicable.
+
+# 11. POSIBLES FUNCIONALIDADES FUTURAS
+
+Estas funcionalidades no forman parte de las prioridades iniciales, pero se podrán considerar en futuras etapas:
+
+- Comparación de resultados entre diferentes grupos.
+- Reportes académicos avanzados.
+- Seguimiento de estudiantes con bajo rendimiento.
+- Alertas sobre evaluaciones pendientes.
+- Generación de informes individuales.
+- Recomendaciones de refuerzo académico.
+- Panel general para directivos.
+- Aplicación móvil o experiencia móvil ampliada.
+- Integración con herramientas externas.
+- Nuevos instrumentos de personalidad configurables.
+- Seguimiento histórico de diferentes generaciones de estudiantes.
+
+# 12. METODOLOGÍA DE TRABAJO CON LA IA DESARROLLADORA
+
+La IA que acompañará el desarrollo deberá trabajar como un asistente técnico y programador del proyecto.
+
+No deberá comenzar a generar código inmediatamente sin analizar primero la estructura y los requerimientos.
+
+### Etapa 1. Análisis y planificación
+
+- Comprender el proyecto.
+- Identificar las necesidades funcionales.
+- Analizar las capacidades de Moodle.
+- Proponer una arquitectura.
+- Identificar plugins y herramientas necesarias.
+- Determinar qué funcionalidades requieren desarrollo personalizado.
+
+### Etapa 2. Preparación del entorno
+
+- Definir la versión de Moodle.
+- Configurar el entorno de desarrollo.
+- Preparar la base de datos.
+- Configurar el servidor.
+- Realizar una instalación inicial.
+
+### Etapa 3. Construcción de la estructura académica
+
+- Configurar roles.
+- Crear cursos.
+- Organizar asignaturas.
+- Configurar matrículas.
+- Preparar los espacios de profesores y estudiantes.
+
+### Etapa 4. Personalización de la plataforma
+
+- Adaptar el diseño a Mediar.
+- Crear dashboards.
+- Personalizar navegación.
+- Configurar elementos visuales.
+- Adaptar la experiencia móvil.
+
+### Etapa 5. Implementación de evaluaciones
+
+- Crear el test de personalidad de demostración.
+- Configurar simulacros.
+- Preparar bancos de preguntas.
+- Implementar la calificación.
+- Registrar resultados.
+
+### Etapa 6. Estadísticas y reportes
+
+- Crear paneles de rendimiento.
+- Implementar indicadores.
+- Analizar resultados individuales.
+- Analizar resultados grupales.
+- Implementar gráficos.
+
+### Etapa 7. Pruebas y validación
+
+- Probar cada perfil de usuario.
+- Verificar permisos.
+- Realizar simulacros de prueba.
+- Validar las calificaciones.
+- Comprobar las estadísticas.
+- Revisar la experiencia en diferentes dispositivos.
+
+# 13. INDICACIONES FINALES
+
+Este documento constituye el contexto general del proyecto Mediar y servirá como punto de partida para todo el desarrollo.
+
+La IA deberá tener presente que:
+
+- El objetivo es construir una plataforma educativa real y escalable.
+- Moodle es la base tecnológica seleccionada.
+- La plataforma debe responder a las necesidades específicas de Mediar.
+- Los simulacros y el análisis del rendimiento académico son funcionalidades prioritarias.
+- El test de personalidad es independiente de las evaluaciones académicas.
+- El MBTI es una referencia provisional y podrá sustituirse.
+- La identidad visual debe respetar el logotipo y la colorimetría de Mediar.
+- Las funcionalidades deberán implementarse progresivamente.
+- No se deben tomar decisiones técnicas importantes sin explicar previamente sus implicaciones.
+
+**Antes de comenzar a programar, la IA deberá analizar este documento, plantear las preguntas necesarias y presentar una propuesta de arquitectura y planificación del desarrollo.**
+
+El alcance podrá evolucionar conforme Mediar defina sus necesidades y se validen las primeras demostraciones.
+
+---
+
+**MEDIAR — Potencializa tu realidad.**

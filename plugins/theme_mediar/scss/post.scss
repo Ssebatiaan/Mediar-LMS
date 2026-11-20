@@ -1,0 +1,307 @@
+// Tema Mediar - estilos propios. Se compilan DESPUÉS del preset de Boost.
+// Las variables $mediar-* vienen de pre.scss.
+
+// ===========================================================================
+// 1. Tipografía: Poppins (SIL OFL, fonts/OFL.txt) para títulos y navegación
+// ===========================================================================
+@each $peso in 400, 500, 600, 700 {
+    @font-face {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: $peso;
+        font-display: swap;
+        src: url("[[font:theme|poppins-#{$peso}.woff2]]") format("woff2");
+    }
+}
+
+// ===========================================================================
+// 2. Tokens del sistema de diseño de Moodle (MDS): azul -> naranja Mediar
+//    Los componentes nuevos de Moodle 5.x (botones, enlaces, menú, foco) los leen.
+// ===========================================================================
+:root,
+[data-bs-theme=light] {
+    --mds-bg-interactive-primary-default: #{$mediar-naranja};
+    --mds-bg-interactive-primary-hover: #{$mediar-naranja-600};
+    --mds-bg-interactive-primary-active: #{$mediar-naranja-700};
+    --mds-bg-interactive-primary-disabled: #{$mediar-naranja-200};
+    --mds-bg-interactive-primary-default-light: #{$mediar-naranja-50};
+    --mds-border-interactive-primary-default: #{$mediar-naranja};
+    --mds-border-interactive-primary-hover: #{$mediar-naranja-600};
+    --mds-border-interactive-primary-active: #{$mediar-naranja-700};
+    --mds-border-interactive-primary-disabled: #{$mediar-naranja-200};
+    --mds-text-link-primary-default: #{$mediar-naranja-700};
+    --mds-text-link-primary-hover: #{$mediar-naranja-800};
+    --mds-text-link-primary-disabled: #{$mediar-naranja-300};
+    --mds-focus-default: #{$mediar-naranja};
+    --mds-bg-feedback-primary-default: #{$mediar-naranja};
+    --mds-bg-feedback-primary-light: #{$mediar-naranja-50};
+    --mds-bg-feedback-primary-subtle: #{$mediar-naranja-100};
+    --mds-border-feedback-primary: #{$mediar-naranja-300};
+    --mds-text-feedback-primary: #{$mediar-naranja-900};
+}
+
+[data-bs-theme=dark] {
+    --mds-bg-interactive-primary-default: #{$mediar-naranja};
+    --mds-bg-interactive-primary-hover: #{$mediar-naranja-400};
+    --mds-bg-interactive-primary-active: #{$mediar-naranja-300};
+    --mds-bg-interactive-primary-disabled: #{$mediar-naranja-800};
+    --mds-bg-interactive-primary-default-light: #2b160b;
+    --mds-border-interactive-primary-default: #{$mediar-naranja-400};
+    --mds-border-interactive-primary-hover: #{$mediar-naranja-300};
+    --mds-border-interactive-primary-active: #{$mediar-naranja-200};
+    --mds-border-interactive-primary-disabled: #{$mediar-naranja-800};
+    --mds-text-link-primary-default: #{$mediar-naranja-300};
+    --mds-text-link-primary-hover: #{$mediar-naranja-200};
+    --mds-text-link-primary-disabled: #{$mediar-gris};
+    --mds-focus-default: #{$mediar-naranja-400};
+    --mds-bg-feedback-primary-default: #{$mediar-naranja};
+    --mds-bg-feedback-primary-light: #2b160b;
+    --mds-bg-feedback-primary-subtle: #3d1d0c;
+    --mds-border-feedback-primary: #{$mediar-naranja-700};
+    --mds-text-feedback-primary: #{$mediar-naranja-200};
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.btn,
+.mds-nav-pill__label {
+    font-family: $mediar-fuente-titulos;
+}
+
+// ===========================================================================
+// 3. Barra superior: siempre gris oscuro (data-bs-theme="dark" en la plantilla)
+// ===========================================================================
+.navbar.mediar-navbar[data-bs-theme=dark] {
+    --bs-body-bg: #{$mediar-gris-oscuro};
+    --bs-body-bg-rgb: 37, 37, 37;
+    // Línea naranja inferior sin alterar la altura de la barra.
+    box-shadow: inset 0 -3px 0 $mediar-naranja;
+    border-bottom: 0;
+
+    .navbar-brand {
+        gap: .5rem;
+
+        .logo {
+            height: 36px;
+            width: auto;
+            max-height: none;
+        }
+
+        // Nombre de la marca junto a la gota.
+        &::after {
+            content: "MEDIAR";
+            font-family: $mediar-fuente-titulos;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: .06em;
+            color: $mediar-blanco;
+        }
+    }
+
+    .mds-nav-pill {
+        color: rgba($mediar-blanco, .72);
+
+        &:hover:not(.mds-nav-pill--selected) {
+            color: $mediar-blanco;
+            background-color: rgba($mediar-blanco, .08);
+        }
+    }
+
+    .mds-nav-pill--selected {
+        color: $mediar-blanco;
+        background-color: rgba($mediar-naranja, .18);
+    }
+}
+
+// ===========================================================================
+// 4. Encabezados de página
+// ===========================================================================
+#page-header h1,
+#page-header .h2 {
+    font-weight: 700;
+    letter-spacing: -.01em;
+}
+
+// ===========================================================================
+// 5. Tarjetas y bloques: blancas, sin borde, con sombra suave
+// ===========================================================================
+.block.card,
+.block_myoverview .card-body > .card,
+#region-main .card.dashboard-card,
+.course-card {
+    border: 0;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 1px 2px rgba($mediar-gris-oscuro, .06), 0 4px 14px rgba($mediar-gris-oscuro, .06);
+}
+
+[data-bs-theme=dark] {
+    .block.card,
+    .course-card {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 4px 14px rgba(0, 0, 0, .3);
+    }
+}
+
+// ===========================================================================
+// 6. Tarjetas de curso ("Mis cursos")
+// ===========================================================================
+.course-card {
+    overflow: hidden;
+    transition: transform .15s ease, box-shadow .15s ease;
+
+    &:hover,
+    &:focus-within {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 28px rgba($mediar-gris-oscuro, .16);
+    }
+
+    .card-img-top {
+        height: 8.5rem;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .coursename {
+        font-family: $mediar-fuente-titulos;
+        font-weight: 600;
+        color: var(--bs-emphasis-color);
+        text-decoration: none; // el modo oscuro de Boost subraya los enlaces
+
+        &:hover,
+        &:focus {
+            color: var(--mds-text-link-primary-default);
+            text-decoration: none;
+        }
+    }
+
+    .categoryname {
+        font-size: .85rem;
+        color: var(--bs-secondary-color);
+    }
+
+    // La plantilla trae bg-white fijo: en modo oscuro quedaría una franja blanca.
+    .card-footer.bg-white {
+        background-color: transparent !important;
+    }
+}
+
+// ===========================================================================
+// 7. Botones
+// ===========================================================================
+.btn-primary {
+    box-shadow: 0 2px 6px rgba($mediar-naranja, .25);
+
+    &:hover {
+        box-shadow: 0 4px 12px rgba($mediar-naranja, .35);
+    }
+}
+
+// ===========================================================================
+// 8. Página de acceso
+// ===========================================================================
+body.pagelayout-login #page .login-layout-left {
+    background:
+        radial-gradient(circle at 85% 12%, rgba($mediar-naranja, .38), transparent 42%),
+        radial-gradient(circle at 8% 92%, rgba($mediar-naranja, .2), transparent 38%),
+        $mediar-gris-oscuro;
+    color: $mediar-blanco;
+
+    // Boost agrega la marca "Imagen generada por IA" de su foto por defecto; aquí no hay foto.
+    // !important: el SCSS extra de Boost se compila después del nuestro con el mismo selector.
+    &::after {
+        content: none !important;
+    }
+}
+
+.mediar-login-panel {
+    max-width: 30rem;
+    color: $mediar-blanco;
+
+    .mediar-login-panel-icono {
+        width: 5rem;
+        height: 6rem;
+        margin-bottom: 2.25rem;
+        background: url("[[pix:theme|login-icono]]") no-repeat left center / contain;
+    }
+
+    .mediar-login-eyebrow {
+        margin-bottom: .75rem;
+        font-family: $mediar-fuente-titulos;
+        font-size: .85rem;
+        font-weight: 600;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: $mediar-naranja-300;
+    }
+
+    .mediar-login-title {
+        margin-bottom: 1.25rem;
+        font-size: 2.6rem;
+        line-height: 1.12;
+        color: $mediar-blanco;
+    }
+
+    .mediar-login-description {
+        margin-bottom: 2.5rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: rgba($mediar-blanco, .78);
+    }
+
+    .mediar-login-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid rgba($mediar-blanco, .14);
+    }
+
+    .mediar-login-stat {
+        strong {
+            display: block;
+            margin-bottom: .25rem;
+            font-family: $mediar-fuente-titulos;
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: $mediar-naranja;
+        }
+
+        span {
+            font-size: .85rem;
+            color: rgba($mediar-blanco, .7);
+        }
+    }
+
+    .mediar-login-tagline {
+        margin: 3rem 0 0;
+        font-family: $mediar-fuente-titulos;
+        font-size: .8rem;
+        font-weight: 600;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        color: rgba($mediar-blanco, .45);
+    }
+}
+
+.login-container {
+    #loginlogo #logoimage {
+        max-height: 150px;
+    }
+
+    .login-heading {
+        font-weight: 700;
+    }
+}
+
+// ===========================================================================
+// 9. Detalles
+// ===========================================================================
+// Barras de progreso de curso.
+.progress-bar {
+    background-color: $mediar-naranja;
+}
+
+// Selección de texto con el color de la marca.
+::selection {
+    background-color: rgba($mediar-naranja, .25);
+}
