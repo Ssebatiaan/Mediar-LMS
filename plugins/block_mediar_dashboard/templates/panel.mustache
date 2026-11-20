@@ -1,0 +1,166 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_mediar_dashboard/panel
+
+    Panel de inicio: saludo, indicadores, contenido según el rol y columna derecha
+    (próximas actividades y accesos rápidos).
+
+    Example context (json):
+    {
+        "saludo": "Hola, Valentina", "subtitulo": "Colegio Promoción Social - Promoción 2027",
+        "cuenta": {"dias": 107, "fecha": "7 de marzo de 2027"}, "esestudiante": true, "kpis": [], "tarjetas": [],
+        "proximas": {"total": 0, "hayitems": false, "items": [], "urltodas": "#", "urlcalendario": "#"}, "accesos": []
+    }
+}}
+<div class="mediar-dashboard">
+    <header class="mediar-saludo">
+        <div>
+            <h2 class="mediar-saludo-titulo">{{saludo}}</h2>
+            <p class="mediar-saludo-sub">{{subtitulo}}</p>
+        </div>
+        {{#cuenta}}
+        <div class="mediar-cuenta" role="note">
+            <strong>{{dias}}</strong>
+            <span>{{#str}}diasicfes, block_mediar_dashboard{{/str}}<small>{{fecha}}</small></span>
+        </div>
+        {{/cuenta}}
+    </header>
+
+    {{> local_mediar/kpis }}
+
+    <div class="row g-4">
+        <div class="col-12 col-xl-8 mediar-dashboard-principal">
+
+            {{! ---------------- Estudiante ---------------- }}
+            {{#esestudiante}}
+            <section class="mediar-panel">
+                <header class="mediar-panel-header">
+                    <h3 class="mediar-panel-titulo">{{#str}}miscursos, block_mediar_dashboard{{/str}}</h3>
+                </header>
+                <div class="mediar-tarjetas">{{#tarjetas}}{{> local_mediar/tarjeta_curso }}{{/tarjetas}}</div>
+            </section>
+            <section class="mediar-panel">
+                <header class="mediar-panel-header">
+                    <h3 class="mediar-panel-titulo">{{#str}}progresoarea, local_mediar{{/str}}</h3>
+                    <a class="mediar-enlace-suave" href="{{urlprogreso}}">{{#str}}verprogreso, block_mediar_dashboard{{/str}}</a>
+                </header>
+                <p class="mediar-ayuda">{{#str}}progresoarea_ayuda, local_mediar{{/str}}</p>
+                {{#graficoareas}}{{{graficoareas}}}{{/graficoareas}}
+                {{^graficoareas}}<p class="mediar-vacio">{{#str}}evolucionfaltan, local_mediar{{/str}}</p>{{/graficoareas}}
+            </section>
+            {{#hayfortalezas}}
+            <div class="row g-4">
+                <div class="col-12 col-md-6">
+                    <section class="mediar-panel h-100">
+                        <h3 class="mediar-panel-titulo">{{#str}}fortalezas, local_mediar{{/str}}</h3>
+                        {{#fortalezas}}{{> local_mediar/barras }}{{/fortalezas}}
+                    </section>
+                </div>
+                <div class="col-12 col-md-6">
+                    <section class="mediar-panel h-100">
+                        <h3 class="mediar-panel-titulo">{{#str}}debilidades, local_mediar{{/str}}</h3>
+                        {{#debilidades}}{{> local_mediar/barras }}{{/debilidades}}
+                    </section>
+                </div>
+            </div>
+            {{/hayfortalezas}}
+            {{/esestudiante}}
+
+            {{! ---------------- Profesor ---------------- }}
+            {{#esprofesor}}
+            <section class="mediar-panel">
+                <header class="mediar-panel-header">
+                    <h3 class="mediar-panel-titulo">{{#str}}miscursos, block_mediar_dashboard{{/str}}</h3>
+                </header>
+                <div class="mediar-tarjetas">{{#tarjetas}}{{> local_mediar/tarjeta_curso }}{{/tarjetas}}</div>
+            </section>
+            {{#graficocomparacion}}
+            <section class="mediar-panel">
+                <h3 class="mediar-panel-titulo">{{#str}}comparacion, block_mediar_dashboard{{/str}}</h3>
+                <p class="mediar-ayuda">{{#str}}comparacion_ayuda, block_mediar_dashboard{{/str}}</p>
+                {{{graficocomparacion}}}
+            </section>
+            {{/graficocomparacion}}
+            <section class="mediar-panel">
+                <h3 class="mediar-panel-titulo">{{#str}}apoyo, block_mediar_dashboard{{/str}}</h3>
+                {{#hayalertas}}
+                <ul class="mediar-lista-apoyo">
+                    {{#alertas}}
+                    <li>
+                        <a href="{{url}}">{{nombre}}</a>
+                        <span class="mediar-ayuda">{{curso}}</span>
+                        <span class="badge mediar-badge-reforzar">{{#pix}}i/warning, core{{/pix}} {{pct}} %</span>
+                    </li>
+                    {{/alertas}}
+                </ul>
+                {{#masalertas}}<p class="mediar-ayuda mb-0">{{#str}}masalertas, block_mediar_dashboard, {{masalertas}}{{/str}}</p>{{/masalertas}}
+                {{/hayalertas}}
+                {{^hayalertas}}<p class="mediar-vacio mb-0">{{#str}}sinalertas, block_mediar_dashboard{{/str}}</p>{{/hayalertas}}
+            </section>
+            {{/esprofesor}}
+
+            {{! ---------------- Administración ---------------- }}
+            {{#esadmin}}
+            <section class="mediar-panel">
+                <h3 class="mediar-panel-titulo">{{#str}}colegios, block_mediar_dashboard{{/str}}</h3>
+                <div class="table-responsive">
+                    <table class="table mediar-tabla-datos mb-0">
+                        <thead><tr>
+                            <th scope="col">{{#str}}colegio, block_mediar_dashboard{{/str}}</th>
+                            <th scope="col" class="text-center">{{#str}}kpi_estudiantes, block_mediar_dashboard{{/str}}</th>
+                            <th scope="col" class="text-center">{{#str}}promediocuadernillos, local_mediar{{/str}}</th>
+                            <th scope="col" class="text-center">{{#str}}ultimosimulacro, local_mediar{{/str}}</th>
+                            <th scope="col" class="text-center">{{#str}}participacioncol, block_mediar_dashboard{{/str}}</th>
+                        </tr></thead>
+                        <tbody>
+                        {{#colegios}}
+                            <tr>
+                                <td class="fw-semibold">{{nombre}}</td>
+                                <td class="text-center">{{estudiantes}}</td>
+                                <td class="text-center">{{promedio}}</td>
+                                <td class="text-center">{{simulacro}} <span class="text-muted">/500</span>{{#simulacronombre}}<div class="mediar-ayuda">{{simulacronombre}}</div>{{/simulacronombre}}</td>
+                                <td class="text-center">{{participacion}}</td>
+                            </tr>
+                        {{/colegios}}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="mediar-panel">
+                <h3 class="mediar-panel-titulo">{{#str}}promedioarea, block_mediar_dashboard{{/str}}</h3>
+                <p class="mediar-ayuda">{{#str}}promedioarea_ayuda, block_mediar_dashboard{{/str}}</p>
+                {{#areas}}{{> local_mediar/barras }}{{/areas}}
+            </section>
+            {{/esadmin}}
+        </div>
+
+        {{! En pantallas angostas la columna de pendientes va antes del contenido (order-first). }}
+        <aside class="col-12 col-xl-4 order-first order-xl-last mediar-dashboard-lateral" aria-label="{{#str}}lateral, block_mediar_dashboard{{/str}}">
+            {{#proximas}}{{> local_mediar/proximas }}{{/proximas}}
+            <section class="mediar-panel">
+                <h3 class="mediar-panel-titulo">{{#str}}accesos, block_mediar_dashboard{{/str}}</h3>
+                <div class="mediar-accesos">
+                    {{#accesos}}
+                        {{#url}}<a class="mediar-acceso" href="{{url}}">{{{icono}}}<span>{{nombre}}</span></a>{{/url}}
+                        {{#deshabilitado}}<span class="mediar-acceso es-deshabilitado" aria-disabled="true">{{{icono}}}<span>{{nombre}}</span><small>{{#str}}proximamente, local_mediar{{/str}}</small></span>{{/deshabilitado}}
+                    {{/accesos}}
+                </div>
+            </section>
+        </aside>
+    </div>
+</div>

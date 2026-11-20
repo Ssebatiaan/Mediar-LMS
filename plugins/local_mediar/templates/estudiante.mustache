@@ -1,0 +1,118 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_mediar/estudiante
+
+    Historial académico de un estudiante.
+
+    Example context (json):
+    {
+        "nombre": "Valentina García", "cohorte": "Colegio Promoción Social - Promoción 2027",
+        "kpis": [], "simulacros": [], "haysimulacros": false, "cursos": [], "fortalezas": {"barras": []},
+        "debilidades": {"barras": []}
+    }
+}}
+<div class="mediar-pagina">
+    {{#cohorte}}<p class="mediar-subtitulo">{{cohorte}}</p>{{/cohorte}}
+    {{> local_mediar/kpis }}
+
+    <div class="row g-4">
+        <div class="col-12 col-xl-7">
+            <section class="mediar-panel h-100">
+                <h2 class="mediar-panel-titulo">{{#str}}progresoarea, local_mediar{{/str}}</h2>
+                <p class="mediar-ayuda">{{#str}}progresoarea_ayuda, local_mediar{{/str}}</p>
+                {{#graficoareas}}{{{graficoareas}}}{{/graficoareas}}
+                {{^graficoareas}}<p class="mediar-vacio">{{#str}}evolucionfaltan, local_mediar{{/str}}</p>{{/graficoareas}}
+            </section>
+        </div>
+        <div class="col-12 col-xl-5">
+            <section class="mediar-panel h-100">
+                <h2 class="mediar-panel-titulo">{{#str}}simulacrosarea, local_mediar{{/str}}</h2>
+                <p class="mediar-ayuda">{{#str}}simulacrosarea_ayuda, local_mediar{{/str}}</p>
+                {{#graficosimulacros}}{{{graficosimulacros}}}{{/graficosimulacros}}
+                {{^graficosimulacros}}<p class="mediar-vacio">{{#str}}sinsimulacros, local_mediar{{/str}}</p>{{/graficosimulacros}}
+            </section>
+        </div>
+
+        <div class="col-12 col-lg-6">
+            <section class="mediar-panel h-100">
+                <h2 class="mediar-panel-titulo">{{#str}}fortalezas, local_mediar{{/str}}</h2>
+                {{#fortalezas}}{{> local_mediar/barras }}{{/fortalezas}}
+            </section>
+        </div>
+        <div class="col-12 col-lg-6">
+            <section class="mediar-panel h-100">
+                <h2 class="mediar-panel-titulo">{{#str}}debilidades, local_mediar{{/str}}</h2>
+                {{#debilidades}}{{> local_mediar/barras }}{{/debilidades}}
+            </section>
+        </div>
+
+        {{#haysimulacros}}
+        <div class="col-12">
+            <section class="mediar-panel">
+                <h2 class="mediar-panel-titulo">{{#str}}simulacros, local_mediar{{/str}}</h2>
+                <div class="table-responsive">
+                    <table class="table mediar-tabla-datos mb-0">
+                        <thead><tr>
+                            <th scope="col">{{#str}}evaluacion, local_mediar{{/str}}</th>
+                            <th scope="col" class="text-center">{{#str}}global, local_mediar{{/str}}</th>
+                            {{#simulacros.0}}{{#areas}}<th scope="col" class="text-center"><span class="mediar-punto" style="background-color: {{color}}" aria-hidden="true"></span> {{nombre}}</th>{{/areas}}{{/simulacros.0}}
+                        </tr></thead>
+                        <tbody>
+                        {{#simulacros}}
+                            <tr>
+                                <td><a href="{{url}}">{{nombre}}</a><div class="mediar-ayuda">{{fecha}}</div></td>
+                                <td class="text-center fw-bold">{{global}} <span class="text-muted fw-normal">/500</span></td>
+                                {{#areas}}<td class="text-center">{{valor}}</td>{{/areas}}
+                            </tr>
+                        {{/simulacros}}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        {{/haysimulacros}}
+
+        <div class="col-12">
+            <section class="mediar-panel">
+                <h2 class="mediar-panel-titulo">{{#str}}historial, local_mediar{{/str}}</h2>
+                <div class="row g-3">
+                {{#cursos}}
+                    <div class="col-12 col-md-6 col-xxl-4">
+                        <div class="mediar-historial-curso">
+                            <a class="mediar-historial-nombre" href="{{url}}">{{nombre}}</a>
+                            <ul class="mediar-historial-lista">
+                            {{#evaluaciones}}
+                                <li>
+                                    <a href="{{url}}">{{nombre}}</a>
+                                    {{#nota}}<span class="mediar-historial-nota">{{nota}} <small class="text-muted">({{pct}})</small></span>{{/nota}}
+                                    {{^nota}}
+                                        {{#pendiente}}<span class="badge mediar-badge-pendiente">{{#str}}pendiente, local_mediar{{/str}}</span>{{/pendiente}}
+                                        {{#futura}}<span class="text-muted small">{{#str}}proximamente, local_mediar{{/str}}</span>{{/futura}}
+                                        {{^pendiente}}{{^futura}}<span class="text-muted small">{{#str}}nopresentado, local_mediar{{/str}}</span>{{/futura}}{{/pendiente}}
+                                    {{/nota}}
+                                </li>
+                            {{/evaluaciones}}
+                            </ul>
+                        </div>
+                    </div>
+                {{/cursos}}
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

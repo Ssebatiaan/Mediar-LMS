@@ -1,0 +1,220 @@
+{
+  "area": "lectura",
+  "banco": "Lectura Crítica",
+  "prefijo": "LEC",
+  "componentes": ["Textos informativos", "Textos argumentativos", "Textos discontinuos", "Textos literarios"],
+  "competencias": ["Identificar y entender contenidos locales", "Comprender cómo se articulan las partes de un texto", "Reflexionar y evaluar un texto"],
+  "textos": {
+    "A": "<p class='mediar-contexto-titulo'>Lea el siguiente texto y responda.</p><p>Durante la adolescencia, el reloj biológico se desplaza: el cuerpo empieza a producir melatonina, la hormona que induce el sueño, más tarde que en la infancia. Por eso a muchos jóvenes les cuesta dormirse antes de las once de la noche, aunque tengan que levantarse temprano para ir al colegio.</p><p>Los especialistas recomiendan entre ocho y diez horas de sueño para esta edad; sin embargo, muchos adolescentes duermen menos de siete. La falta de sueño no solo produce cansancio: también afecta la memoria, la concentración y el estado de ánimo.</p><p>Algunos colegios han retrasado la hora de entrada y han reportado mejoras en la asistencia y el rendimiento, aunque otros señalan que el cambio complica los horarios del transporte y de las familias.</p>",
+    "B": "<p class='mediar-contexto-titulo'>¿Celulares en el aula?</p><p>Prohibir los celulares en el colegio parece una solución sencilla: menos distracciones, más atención. Pero la prohibición total desconoce que el teléfono también es una herramienta: con él se consultan diccionarios, se graban experimentos y se accede a libros que la biblioteca no tiene.</p><p>El problema no es el aparato, sino el uso que se le da. En lugar de prohibir, los colegios deberían enseñar a usarlo: acordar momentos para guardarlo, diseñar actividades donde sea necesario y fijar normas claras sobre las redes sociales. Formar ciudadanos digitales responsables es más útil que esconder un objeto que los estudiantes seguirán usando fuera del aula.</p>",
+    "C": "<p class='mediar-contexto-titulo'>Encuesta sobre hábitos de lectura en un colegio (200 estudiantes en total)</p><table class='table table-sm table-bordered mediar-tabla'><thead><tr><th>Tipo de lectura</th><th>Grado 9°</th><th>Grado 10°</th><th>Grado 11°</th></tr></thead><tbody><tr><td>Libros impresos</td><td>40 %</td><td>35 %</td><td>25 %</td></tr><tr><td>Libros digitales</td><td>15 %</td><td>20 %</td><td>30 %</td></tr><tr><td>Redes sociales y blogs</td><td>35 %</td><td>35 %</td><td>35 %</td></tr><tr><td>No lee por gusto</td><td>10 %</td><td>10 %</td><td>10 %</td></tr></tbody></table><p class='small'>Porcentaje de estudiantes de cada grado según el tipo de lectura que más hace por gusto.</p>",
+    "D": "<p class='mediar-contexto-titulo'>El último bus</p><p>—Siempre llega tarde —dijo la mujer del paraguas, y miró el reloj por quinta vez.</p><p>El muchacho sonrió sin responder. Llevaba en las manos un cuaderno lleno de dibujos de buses: buses rojos, buses con alas, buses que cruzaban el mar. Cuando por fin apareció el bus de las diez, la mujer subió refunfuñando. El muchacho se quedó en la acera, abrió el cuaderno y empezó a dibujar ese bus también, con sus luces amarillas perdiéndose en la lluvia.</p><p>«Algún día», pensó, «manejaré uno que nunca llegue tarde».</p>"
+  },
+  "preguntas": [
+    {
+      "id": "LEC-001", "cuadernillo": 1, "componente": "Textos informativos", "competencia": "Identificar y entender contenidos locales", "dificultad": "baja", "tipo": "unica", "texto": "A",
+      "enunciado": "Según el texto, ¿por qué a muchos adolescentes les cuesta dormirse temprano?",
+      "opciones": [
+        {"texto": "Porque su cuerpo produce melatonina más tarde que en la infancia.", "correcta": true},
+        {"texto": "Porque usan el celular antes de dormir.", "retro": "Puede ser cierto, pero el texto no lo menciona."},
+        {"texto": "Porque necesitan menos horas de sueño que los niños."},
+        {"texto": "Porque el colegio empieza muy temprano."}
+      ],
+      "retro": "El primer párrafo explica que el reloj biológico se desplaza y la melatonina se produce más tarde."
+    },
+    {
+      "id": "LEC-002", "cuadernillo": 1, "componente": "Textos informativos", "competencia": "Comprender cómo se articulan las partes de un texto", "dificultad": "media", "tipo": "unica", "texto": "A",
+      "enunciado": "¿Qué función cumple la expresión «sin embargo» en el segundo párrafo?",
+      "opciones": [
+        {"texto": "Introduce un contraste entre lo que se recomienda y lo que realmente ocurre.", "correcta": true},
+        {"texto": "Introduce un ejemplo de la recomendación de los especialistas."},
+        {"texto": "Indica una consecuencia de dormir poco."},
+        {"texto": "Resume la idea principal del texto."}
+      ],
+      "retro": "Se recomiendan 8 a 10 horas, «sin embargo» muchos duermen menos de 7: es un conector de contraste."
+    },
+    {
+      "id": "LEC-003", "cuadernillo": 2, "componente": "Textos informativos", "competencia": "Reflexionar y evaluar un texto", "dificultad": "alta", "tipo": "unica", "texto": "A",
+      "enunciado": "¿Cuál de las siguientes conclusiones se puede sacar a partir del texto?",
+      "opciones": [
+        {"texto": "Retrasar la hora de entrada puede traer beneficios académicos, pero también costos para la organización de las familias.", "correcta": true},
+        {"texto": "Todos los colegios deberían empezar sus clases después de las diez de la mañana."},
+        {"texto": "La falta de sueño es la principal causa del bajo rendimiento escolar.", "retro": "El texto dice que el sueño afecta el rendimiento, no que sea la causa principal."},
+        {"texto": "Los adolescentes duermen poco por falta de disciplina."}
+      ],
+      "retro": "El último párrafo presenta las dos caras del cambio de horario sin tomar una posición absoluta."
+    },
+    {
+      "id": "LEC-004", "cuadernillo": 2, "componente": "Textos informativos", "competencia": "Identificar y entender contenidos locales", "dificultad": "baja", "tipo": "vf", "texto": "A",
+      "enunciado": "Según el texto, los especialistas recomiendan que los adolescentes duerman entre ocho y diez horas.",
+      "respuesta": true,
+      "retro": "Así lo dice el comienzo del segundo párrafo."
+    },
+    {
+      "id": "LEC-005", "cuadernillo": 1, "componente": "Textos informativos", "competencia": "Identificar y entender contenidos locales", "dificultad": "media", "tipo": "multiple", "texto": "A",
+      "enunciado": "¿Qué efectos de la falta de sueño menciona el texto? Seleccione todas las correctas.",
+      "opciones": [
+        {"texto": "Afecta la memoria y la concentración.", "correcta": true},
+        {"texto": "Afecta el estado de ánimo.", "correcta": true},
+        {"texto": "Produce aumento de peso."},
+        {"texto": "Disminuye la producción de melatonina."}
+      ],
+      "retro": "El texto menciona cansancio, memoria, concentración y estado de ánimo."
+    },
+    {
+      "id": "LEC-006", "cuadernillo": 1, "componente": "Textos argumentativos", "competencia": "Comprender cómo se articulan las partes de un texto", "dificultad": "media", "tipo": "unica", "texto": "B",
+      "enunciado": "¿Cuál es la tesis que defiende el autor?",
+      "opciones": [
+        {"texto": "Los colegios deberían enseñar a usar el celular en lugar de prohibirlo.", "correcta": true},
+        {"texto": "Los celulares deben prohibirse porque distraen a los estudiantes.", "retro": "El autor menciona esa idea para cuestionarla."},
+        {"texto": "Las bibliotecas escolares deberían tener más libros."},
+        {"texto": "Las redes sociales deberían eliminarse de los colegios."}
+      ],
+      "retro": "La tesis aparece en el segundo párrafo: «En lugar de prohibir, los colegios deberían enseñar a usarlo»."
+    },
+    {
+      "id": "LEC-007", "cuadernillo": 2, "componente": "Textos argumentativos", "competencia": "Comprender cómo se articulan las partes de un texto", "dificultad": "media", "tipo": "unica", "texto": "B",
+      "enunciado": "¿Qué papel cumple en el texto la mención de diccionarios, experimentos y libros?",
+      "opciones": [
+        {"texto": "Son ejemplos que apoyan la idea de que el celular también es una herramienta.", "correcta": true},
+        {"texto": "Son las razones por las que el autor apoya la prohibición."},
+        {"texto": "Son las normas de uso que el autor propone."},
+        {"texto": "Son críticas al funcionamiento de la biblioteca."}
+      ],
+      "retro": "Esos ejemplos sostienen el argumento de que el teléfono tiene usos educativos."
+    },
+    {
+      "id": "LEC-008", "cuadernillo": 1, "componente": "Textos argumentativos", "competencia": "Reflexionar y evaluar un texto", "dificultad": "alta", "tipo": "unica", "texto": "B",
+      "enunciado": "¿Cuál de los siguientes hechos DEBILITARÍA la posición del autor?",
+      "opciones": [
+        {"texto": "Un estudio muestra que, incluso con normas de uso, la sola presencia del celular reduce la atención de los estudiantes.", "correcta": true},
+        {"texto": "Muchos estudiantes usan el celular para consultar diccionarios.", "retro": "Ese hecho apoya al autor."},
+        {"texto": "Los estudiantes siguen usando el celular fuera del colegio.", "retro": "Ese hecho apoya al autor."},
+        {"texto": "Algunos colegios ya enseñan normas sobre redes sociales."}
+      ],
+      "retro": "Si las normas no evitan la distracción, la propuesta de enseñar a usarlo pierde fuerza."
+    },
+    {
+      "id": "LEC-009", "cuadernillo": 2, "componente": "Textos argumentativos", "competencia": "Identificar y entender contenidos locales", "dificultad": "baja", "tipo": "unica", "texto": "B",
+      "enunciado": "Según el autor, ¿cuál es el verdadero problema?",
+      "opciones": [
+        {"texto": "El uso que se le da al celular.", "correcta": true},
+        {"texto": "El precio de los celulares."},
+        {"texto": "La falta de libros en la biblioteca."},
+        {"texto": "La cantidad de horas de clase."}
+      ],
+      "retro": "«El problema no es el aparato, sino el uso que se le da»."
+    },
+    {
+      "id": "LEC-010", "cuadernillo": 2, "componente": "Textos argumentativos", "competencia": "Reflexionar y evaluar un texto", "dificultad": "media", "tipo": "vf", "texto": "B",
+      "enunciado": "El texto presenta únicamente argumentos a favor de prohibir el celular en el colegio.",
+      "respuesta": false,
+      "retro": "El autor menciona la idea de prohibir, pero argumenta en contra de la prohibición total."
+    },
+    {
+      "id": "LEC-011", "cuadernillo": 1, "componente": "Textos discontinuos", "competencia": "Identificar y entender contenidos locales", "dificultad": "baja", "tipo": "unica", "texto": "C",
+      "enunciado": "¿En qué grado es mayor el porcentaje de estudiantes que leen libros digitales?",
+      "opciones": [
+        {"texto": "Grado 11°", "correcta": true},
+        {"texto": "Grado 10°"},
+        {"texto": "Grado 9°"},
+        {"texto": "Es igual en los tres grados."}
+      ],
+      "retro": "Libros digitales: 15 % en 9°, 20 % en 10° y 30 % en 11°."
+    },
+    {
+      "id": "LEC-012", "cuadernillo": 1, "componente": "Textos discontinuos", "competencia": "Comprender cómo se articulan las partes de un texto", "dificultad": "media", "tipo": "unica", "texto": "C",
+      "enunciado": "¿Qué tendencia muestra la tabla de 9° a 11°?",
+      "opciones": [
+        {"texto": "Disminuye la lectura de libros impresos y aumenta la de libros digitales.", "correcta": true},
+        {"texto": "Aumenta la lectura de libros impresos y de libros digitales."},
+        {"texto": "Disminuye la lectura en redes sociales y blogs.", "retro": "Ese porcentaje se mantiene en 35 % en los tres grados."},
+        {"texto": "Cada vez más estudiantes dejan de leer por gusto."}
+      ],
+      "retro": "Impresos: 40 → 35 → 25 %. Digitales: 15 → 20 → 30 %."
+    },
+    {
+      "id": "LEC-013", "cuadernillo": 2, "componente": "Textos discontinuos", "competencia": "Reflexionar y evaluar un texto", "dificultad": "alta", "tipo": "unica", "texto": "C",
+      "enunciado": "Un estudiante concluye: «En grado 11° se lee menos que en grado 9°». ¿Es válida esta conclusión?",
+      "opciones": [
+        {"texto": "No, porque el porcentaje que no lee por gusto es el mismo en los tres grados; lo que cambia es el formato de lectura.", "correcta": true},
+        {"texto": "Sí, porque el porcentaje de lectura de libros impresos baja."},
+        {"texto": "Sí, porque en grado 11° hay menos estudiantes."},
+        {"texto": "No, porque en grado 11° todos los estudiantes leen libros digitales."}
+      ],
+      "retro": "La caída de los impresos se compensa con el aumento de los digitales: el 10 % que no lee es igual en todos los grados."
+    },
+    {
+      "id": "LEC-014", "cuadernillo": 2, "componente": "Textos discontinuos", "competencia": "Identificar y entender contenidos locales", "dificultad": "media", "tipo": "corta", "texto": "C",
+      "enunciado": "¿Qué porcentaje de los estudiantes de grado 10° lee principalmente libros digitales? Escriba solo el número.",
+      "respuestas": ["20"],
+      "retro": "En la fila «Libros digitales», columna «Grado 10°»: 20 %."
+    },
+    {
+      "id": "LEC-015", "cuadernillo": 1, "componente": "Textos discontinuos", "competencia": "Reflexionar y evaluar un texto", "dificultad": "media", "tipo": "unica", "texto": "C",
+      "enunciado": "¿Qué dato adicional se necesitaría para saber cuántos estudiantes de grado 11° leen libros digitales?",
+      "opciones": [
+        {"texto": "Cuántos de los 200 estudiantes encuestados son de grado 11°.", "correcta": true},
+        {"texto": "El porcentaje de estudiantes de 11° que lee en redes sociales."},
+        {"texto": "La cantidad de libros que tiene la biblioteca."},
+        {"texto": "La edad promedio de los estudiantes de 11°."}
+      ],
+      "retro": "La tabla da porcentajes por grado; para pasar a cantidades hace falta saber cuántos estudiantes hay en cada grado."
+    },
+    {
+      "id": "LEC-016", "cuadernillo": 1, "componente": "Textos literarios", "competencia": "Identificar y entender contenidos locales", "dificultad": "baja", "tipo": "unica", "texto": "D",
+      "enunciado": "¿Qué lleva el muchacho en las manos?",
+      "opciones": [
+        {"texto": "Un cuaderno con dibujos de buses.", "correcta": true},
+        {"texto": "Un paraguas.", "retro": "El paraguas es de la mujer."},
+        {"texto": "Un reloj."},
+        {"texto": "Un mapa de las rutas de bus."}
+      ],
+      "retro": "«Llevaba en las manos un cuaderno lleno de dibujos de buses»."
+    },
+    {
+      "id": "LEC-017", "cuadernillo": 2, "componente": "Textos literarios", "competencia": "Comprender cómo se articulan las partes de un texto", "dificultad": "media", "tipo": "unica", "texto": "D",
+      "enunciado": "¿Qué contraste se establece entre los dos personajes?",
+      "opciones": [
+        {"texto": "La mujer está impaciente por la demora, mientras el muchacho observa el bus con interés.", "correcta": true},
+        {"texto": "La mujer está feliz y el muchacho está triste."},
+        {"texto": "Ambos están molestos por la lluvia."},
+        {"texto": "El muchacho tiene prisa y la mujer no."}
+      ],
+      "retro": "La mujer mira el reloj y sube refunfuñando; el muchacho sonríe y dibuja el bus."
+    },
+    {
+      "id": "LEC-018", "cuadernillo": 1, "componente": "Textos literarios", "competencia": "Reflexionar y evaluar un texto", "dificultad": "alta", "tipo": "unica", "texto": "D",
+      "enunciado": "¿Qué sugiere el final del relato sobre el muchacho?",
+      "opciones": [
+        {"texto": "Que tiene un sueño relacionado con lo que dibuja.", "correcta": true},
+        {"texto": "Que perdió el bus por estar distraído."},
+        {"texto": "Que ya trabaja como conductor de bus."},
+        {"texto": "Que no le gustan los buses."}
+      ],
+      "retro": "«Algún día manejaré uno que nunca llegue tarde»: expresa un deseo para el futuro."
+    },
+    {
+      "id": "LEC-019", "cuadernillo": 2, "componente": "Textos literarios", "competencia": "Comprender cómo se articulan las partes de un texto", "dificultad": "media", "tipo": "unica", "texto": "D",
+      "enunciado": "La expresión «miró el reloj por quinta vez» indica que la mujer…",
+      "opciones": [
+        {"texto": "lleva un buen tiempo esperando y está impaciente.", "correcta": true},
+        {"texto": "tiene cinco relojes."},
+        {"texto": "llega cinco minutos tarde."},
+        {"texto": "toma el bus cinco veces al día."}
+      ],
+      "retro": "Repetir la acción muchas veces muestra la espera y la impaciencia."
+    },
+    {
+      "id": "LEC-020", "cuadernillo": 2, "componente": "Textos literarios", "competencia": "Reflexionar y evaluar un texto", "dificultad": "media", "tipo": "multiple", "texto": "D",
+      "enunciado": "¿Qué elementos del texto ayudan a crear el ambiente de la escena? Seleccione todas las correctas.",
+      "opciones": [
+        {"texto": "La lluvia y el paraguas de la mujer.", "correcta": true},
+        {"texto": "Las luces amarillas del bus perdiéndose en la lluvia.", "correcta": true},
+        {"texto": "Los nombres de los personajes.", "retro": "Los personajes no tienen nombre en el relato."},
+        {"texto": "La descripción del interior del bus."}
+      ],
+      "retro": "La lluvia, el paraguas y las luces que se pierden crean una atmósfera nocturna y húmeda."
+    }
+  ]
+}

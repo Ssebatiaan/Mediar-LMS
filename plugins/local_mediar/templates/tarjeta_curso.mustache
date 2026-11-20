@@ -1,0 +1,47 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_mediar/tarjeta_curso
+
+    Tarjeta de curso: imagen, código corto, nombre, NRC y colegio, y una línea de estado opcional.
+
+    Example context (json):
+    {
+        "nombre": "Matemáticas - Colegio Promoción Social", "corto": "MATEMÁTICAS-1119-2027", "url": "#",
+        "imagen": "", "meta": "NRC 1119 · Colegio Promoción Social", "linea": "Último: 7/10", "pct": 70,
+        "tienepct": true, "urlestadisticas": "#"
+    }
+}}
+<article class="mediar-tarjeta">
+    <a class="mediar-tarjeta-imagen" href="{{url}}" style="background-image: url('{{imagen}}')" tabindex="-1" aria-hidden="true"></a>
+    <div class="mediar-tarjeta-cuerpo">
+        <span class="mediar-tarjeta-corto">{{corto}}</span>
+        <h3 class="mediar-tarjeta-nombre"><a href="{{url}}">{{nombre}}</a></h3>
+        <span class="mediar-tarjeta-meta">{{meta}}</span>
+        {{#linea}}
+        <div class="mediar-tarjeta-linea">
+            <span>{{linea}}</span>
+            {{#tienepct}}
+            <div class="mediar-barra-pista" role="img" aria-label="{{linea}}"><div class="mediar-barra-relleno" style="width: {{pct}}%"></div></div>
+            {{/tienepct}}
+        </div>
+        {{/linea}}
+        {{#urlestadisticas}}
+        <a class="btn btn-sm mediar-btn-suave mt-2" href="{{urlestadisticas}}">{{#pix}}i/report, core{{/pix}} {{#str}}verestadisticas, local_mediar{{/str}}</a>
+        {{/urlestadisticas}}
+    </div>
+</article>

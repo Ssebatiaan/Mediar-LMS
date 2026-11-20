@@ -89,6 +89,7 @@ services:
       - ./plugins:/opt/mediar/plugins:ro
       - ./scripts:/opt/mediar/scripts:ro
       - ./assets:/opt/mediar/assets:ro
+      - ./contenido:/opt/mediar/contenido:ro
 
 volumes:
   db_data:

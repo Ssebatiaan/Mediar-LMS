@@ -73,6 +73,9 @@ En **Git Bash**, anteponer `MSYS_NO_PATHCONV=1` a los comandos `docker compose e
 | `scripts/seed_estructura.php` | Colegios, cursos con NRC, profesores, estudiantes, cohortes, evento del examen. Idempotente. |
 | `scripts/verificar_estructura.php` | Resumen de solo lectura: cursos, matrículas y campos por curso. |
 
+| `scripts/seed_banco.php` | Curso "Banco de preguntas Mediar" con un banco por área; importa `contenido/preguntas/*.json` (vía GIFT). Idempotente. |
+| `scripts/seed_simulacros.php` | 3 cuadernillos por asignatura y 3 simulacros completos (sobre 500) por colegio. Idempotente. |
+| `scripts/simular_intentos.php` | Intentos simulados de los estudiantes demo (`--reiniciar` para regenerarlos). |
 | `scripts/setup_tema.php` | Activa el tema Mediar, carga logos, imágenes de curso por área y modos claro/oscuro. Idempotente. |
 | `scripts/marca/generar_logos.py` | (host) Logos PNG transparentes a partir del JPEG original. |
 | `scripts/marca/generar_imagenes_cursos.py` | (host) Imágenes de tarjeta de curso por área. |
@@ -83,9 +86,32 @@ Para montar todo desde cero:
 docker compose up -d
 docker compose exec moodle php /opt/mediar/scripts/setup_site.php
 docker compose exec moodle php /opt/mediar/scripts/seed_estructura.php
+docker compose exec moodle php /opt/mediar/scripts/seed_banco.php
+docker compose exec moodle php /opt/mediar/scripts/seed_simulacros.php
+docker compose exec moodle php /opt/mediar/scripts/simular_intentos.php
 docker compose exec moodle sh /opt/mediar/scripts/deploy.sh
 docker compose exec moodle php /opt/mediar/scripts/setup_tema.php
+docker compose exec moodle php /opt/mediar/scripts/setup_dashboard.php
 ```
+
+## Panel de inicio y estadísticas
+
+| Plugin | Qué hace |
+|---|---|
+| `local_mediar` | Analítica (área, componente, competencia, puntaje 0–500), "Próximas actividades", páginas de **estadísticas del curso** (`/local/mediar/curso.php?id=`) y **progreso del estudiante** (`/local/mediar/estudiante.php`), exportación Excel/PDF/CSV. Ajustes: fecha del examen y umbral de alerta. |
+| `block_mediar_dashboard` | Panel del Área personal según el rol: estudiante, profesor o administración. Columna derecha con próximas actividades y accesos rápidos. |
+
+- `scripts/setup_dashboard.php` deja el panel Mediar como único bloque del Área personal de todos los usuarios, crea eventos de curso demo y fija el Área personal como inicio.
+- **Permisos:** el estudiante solo ve lo suyo. `local/mediar:verestadisticascurso` (profesor) da acceso a los estudiantes de sus cursos y `local/mediar:verestadisticasinstitucion` (gestor) a todos.
+- **Colores por área** (paleta validada para daltonismo y contraste, claro y oscuro) en `local_mediar/classes/areas.php`.
+
+## Simulacros y banco de preguntas
+
+- **Preguntas** en `contenido/preguntas/<area>.json`: 20 originales por área, con componente, competencia, dificultad, tipo (`unica`, `multiple`, `vf`, `corta`), retroalimentación y textos compartidos (lecturas, tablas, avisos).
+- **Banco:** categoría = componente; etiqueta = competencia; `idnumber` = id (`MAT-001`…).
+- **Cuadernillos** (en cada curso de asignatura): 1 · Diagnóstico y 2 · Seguimiento (10 preguntas, cerrados) y 3 · Repaso general (20 preguntas, abierto del 16 al 29 de noviembre). Nota = aciertos.
+- **Simulacros** (curso Simulacros ICFES): 1 y 2 cerrados (50 preguntas), 3 · Final el 21 de febrero de 2027 (100 preguntas). Nota sobre **500** con la ponderación ICFES: las preguntas de Lectura, Matemáticas, Sociales y Naturales valen 3 puntos y las de Inglés 1.
+- **Intentos simulados:** el progreso mejora con el tiempo y el grupo tiene debilidades a propósito (Geometría, Química, textos discontinuos, Historia, argumentación). `est.cps01` y `est.alm01` no tienen intento en lo que está abierto, para presentarlo en vivo.
 
 ## Tema Mediar (`plugins/theme_mediar`)
 
@@ -112,7 +138,7 @@ node capturar.js est.cps01 1440 salida /my/courses.php "/course/view.php?id=2"
 node capturar.js - 390 salida /login/index.php    # "-" = sin sesión; 390 = móvil
 ```
 
-`dom.js` imprime la estructura HTML de un selector y `reglas.js` lista qué reglas CSS aplican a un elemento.
+`dom.js` imprime la estructura HTML de un selector, `reglas.js` lista qué reglas CSS aplican a un elemento y `medir.js` mide el ancho de los contenedores de los gráficos. Variables: `COMPLETA=1` captura la página entera y `ESPERA=2500` espera a que terminen las animaciones de los gráficos.
 
 ## Estructura
 
@@ -130,6 +156,6 @@ docs/                documentación y referencias
 1. ✅ Moodle 5.3 en Docker
 2. ✅ Estructura académica y datos demo (colegios, cursos con código NRC, profesores, estudiantes)
 3. ✅ Tema Mediar
-4. Simulacros (cuadernillos por asignatura y simulacro completo con escala ICFES 0–500)
-5. Dashboards por rol y estadísticas
+4. ✅ Simulacros (cuadernillos por asignatura y simulacro completo con escala ICFES 0–500)
+5. ✅ Dashboards por rol y estadísticas
 6. Test de personalidad configurable

@@ -1,0 +1,219 @@
+{
+  "area": "matematicas",
+  "banco": "Matemáticas",
+  "prefijo": "MAT",
+  "componentes": ["Números y operaciones", "Álgebra y funciones", "Geometría", "Estadística y probabilidad"],
+  "competencias": ["Interpretación y representación", "Formulación y ejecución", "Argumentación"],
+  "preguntas": [
+    {
+      "id": "MAT-001", "cuadernillo": 1, "componente": "Números y operaciones", "competencia": "Formulación y ejecución", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Una tienda ofrece un descuento del 20 % sobre un artículo que cuesta $85.000 y, sobre el precio con descuento, cobra un IVA del 19 %. ¿Cuánto paga el cliente?",
+      "opciones": [
+        {"texto": "$80.920", "correcta": true},
+        {"texto": "$84.150", "retro": "Restar 20 % y sumar 19 % no equivale a restar 1 %: cada porcentaje se aplica sobre un valor distinto."},
+        {"texto": "$68.000", "retro": "Ese es el precio con descuento, pero falta sumar el IVA."},
+        {"texto": "$101.150", "retro": "Ese valor aplica el IVA sin haber hecho el descuento."}
+      ],
+      "retro": "Precio con descuento: 85.000 × 0,8 = 68.000. Con IVA: 68.000 × 1,19 = 80.920."
+    },
+    {
+      "id": "MAT-002", "cuadernillo": 1, "componente": "Números y operaciones", "competencia": "Interpretación y representación", "dificultad": "baja", "tipo": "unica",
+      "enunciado": "En una receta se usan 3 tazas de harina por cada 2 tazas de leche. Si se usan 9 tazas de harina, ¿cuántas tazas de leche se necesitan?",
+      "opciones": [
+        {"texto": "6", "correcta": true},
+        {"texto": "4,5"},
+        {"texto": "8"},
+        {"texto": "13,5", "retro": "Ese resultado invierte la proporción entre harina y leche."}
+      ],
+      "retro": "La harina se triplicó (de 3 a 9 tazas), así que la leche también: 2 × 3 = 6 tazas."
+    },
+    {
+      "id": "MAT-003", "cuadernillo": 2, "componente": "Números y operaciones", "competencia": "Argumentación", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Laura afirma que si un precio aumenta un 10 % y luego disminuye un 10 %, vuelve a ser el precio original. ¿Es correcta su afirmación?",
+      "opciones": [
+        {"texto": "No, porque la disminución se calcula sobre un valor mayor, y el precio final queda 1 % por debajo del original.", "correcta": true},
+        {"texto": "Sí, porque un aumento y una disminución del mismo porcentaje se cancelan."},
+        {"texto": "No, porque el precio final queda 1 % por encima del original."},
+        {"texto": "Sí, pero solo si el precio original es múltiplo de 10."}
+      ],
+      "retro": "Ejemplo: 100 → 110 (sube 10 %) → 99 (baja 10 % de 110). El precio final es el 99 % del original."
+    },
+    {
+      "id": "MAT-004", "cuadernillo": 2, "componente": "Números y operaciones", "competencia": "Interpretación y representación", "dificultad": "baja", "tipo": "vf",
+      "enunciado": "El número decimal 0,25 es equivalente a la fracción 1/4 y también al 25 %.",
+      "respuesta": true,
+      "retro": "1 ÷ 4 = 0,25, y 0,25 × 100 = 25 %."
+    },
+    {
+      "id": "MAT-005", "cuadernillo": 1, "componente": "Números y operaciones", "competencia": "Formulación y ejecución", "dificultad": "media", "tipo": "corta",
+      "enunciado": "Un bus recorre 240 km en 3 horas a velocidad constante. ¿Cuántos kilómetros recorre en 5 horas? Escriba solo el número.",
+      "respuestas": ["400"],
+      "retro": "Velocidad: 240 ÷ 3 = 80 km por hora. En 5 horas: 80 × 5 = 400 km."
+    },
+    {
+      "id": "MAT-006", "cuadernillo": 1, "componente": "Álgebra y funciones", "competencia": "Interpretación y representación", "dificultad": "media", "tipo": "unica",
+      "enunciado": "El costo C, en pesos, de un viaje en taxi se calcula con la expresión C = 4.500 + 850k, donde k es el número de kilómetros recorridos. ¿Qué representa el número 850?",
+      "opciones": [
+        {"texto": "Lo que aumenta el costo por cada kilómetro recorrido.", "correcta": true},
+        {"texto": "El costo total de un viaje de un kilómetro.", "retro": "Un viaje de 1 km cuesta 4.500 + 850 = 5.350 pesos."},
+        {"texto": "El costo fijo del servicio, sin importar la distancia.", "retro": "El costo fijo es 4.500: no depende de k."},
+        {"texto": "El número máximo de kilómetros que se pueden recorrer."}
+      ],
+      "retro": "850 multiplica a k: es la tasa de cambio, el valor que se suma por cada kilómetro."
+    },
+    {
+      "id": "MAT-007", "cuadernillo": 1, "componente": "Álgebra y funciones", "competencia": "Formulación y ejecución", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Si 3x − 7 = 2x + 5, ¿cuál es el valor de x?",
+      "opciones": [
+        {"texto": "12", "correcta": true},
+        {"texto": "−2"},
+        {"texto": "2"},
+        {"texto": "−12"}
+      ],
+      "retro": "Restando 2x a ambos lados: x − 7 = 5, entonces x = 12."
+    },
+    {
+      "id": "MAT-008", "cuadernillo": 2, "componente": "Álgebra y funciones", "competencia": "Interpretación y representación", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "La gráfica de una función lineal pasa por los puntos (0, 3) y (2, 7). ¿Cuál es la ecuación de la función?",
+      "opciones": [
+        {"texto": "y = 2x + 3", "correcta": true},
+        {"texto": "y = 3x + 2"},
+        {"texto": "y = 4x + 3", "retro": "La pendiente es el cambio en y dividido entre el cambio en x: 4 ÷ 2."},
+        {"texto": "y = 2x + 7"}
+      ],
+      "retro": "Pendiente: (7 − 3) ÷ (2 − 0) = 2. El corte con el eje y es 3, porque pasa por (0, 3)."
+    },
+    {
+      "id": "MAT-009", "cuadernillo": 2, "componente": "Álgebra y funciones", "competencia": "Argumentación", "dificultad": "alta", "tipo": "multiple",
+      "enunciado": "Sobre la función f(x) = x² − 4, ¿cuáles de las siguientes afirmaciones son verdaderas? Seleccione todas las correctas.",
+      "opciones": [
+        {"texto": "Su gráfica corta el eje x en x = 2 y en x = −2.", "correcta": true},
+        {"texto": "Su valor mínimo es −4.", "correcta": true},
+        {"texto": "Es una función lineal."},
+        {"texto": "f(3) = 9."}
+      ],
+      "retro": "x² − 4 = 0 cuando x = ±2. Como x² nunca es negativo, el mínimo es −4 (en x = 0). f(3) = 9 − 4 = 5."
+    },
+    {
+      "id": "MAT-010", "cuadernillo": 1, "componente": "Álgebra y funciones", "competencia": "Formulación y ejecución", "dificultad": "baja", "tipo": "unica",
+      "enunciado": "Ana tiene el doble de la edad de su hermano. Si la suma de sus edades es 24 años, ¿cuántos años tiene Ana?",
+      "opciones": [
+        {"texto": "16", "correcta": true},
+        {"texto": "12", "retro": "12 es la mitad de la suma, pero las edades no son iguales."},
+        {"texto": "8", "retro": "8 es la edad del hermano."},
+        {"texto": "18"}
+      ],
+      "retro": "Si el hermano tiene h años, Ana tiene 2h: h + 2h = 24, entonces h = 8 y Ana tiene 16."
+    },
+    {
+      "id": "MAT-011", "cuadernillo": 1, "componente": "Geometría", "competencia": "Formulación y ejecución", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Un terreno rectangular mide 12 m de largo y 5 m de ancho. ¿Cuánto mide su diagonal?",
+      "opciones": [
+        {"texto": "13 m", "correcta": true},
+        {"texto": "17 m", "retro": "Ese valor es la suma de los lados, no la diagonal."},
+        {"texto": "60 m", "retro": "Ese valor es el área (en m²), no la diagonal."},
+        {"texto": "8,5 m"}
+      ],
+      "retro": "Por el teorema de Pitágoras: √(12² + 5²) = √(144 + 25) = √169 = 13 m."
+    },
+    {
+      "id": "MAT-012", "cuadernillo": 2, "componente": "Geometría", "competencia": "Formulación y ejecución", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Un tanque cilíndrico tiene un radio de 1 m y una altura de 2 m. ¿Cuál es su volumen aproximado? Use π ≈ 3,14.",
+      "opciones": [
+        {"texto": "6,28 m³", "correcta": true},
+        {"texto": "12,56 m³", "retro": "Revise el radio: se eleva al cuadrado el radio, no el diámetro."},
+        {"texto": "3,14 m³", "retro": "Falta multiplicar por la altura."},
+        {"texto": "9,42 m³"}
+      ],
+      "retro": "V = π × r² × h = 3,14 × 1² × 2 = 6,28 m³."
+    },
+    {
+      "id": "MAT-013", "cuadernillo": 1, "componente": "Geometría", "competencia": "Argumentación", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "Si se duplica la medida de los lados de un cuadrado, ¿qué ocurre con su área?",
+      "opciones": [
+        {"texto": "Se multiplica por 4, porque el área depende del cuadrado de la medida del lado.", "correcta": true},
+        {"texto": "Se duplica, porque el área es proporcional a la medida del lado."},
+        {"texto": "Se triplica, porque se suman las áreas de los nuevos lados."},
+        {"texto": "No cambia, porque la figura sigue siendo un cuadrado."}
+      ],
+      "retro": "Lado l → área l². Lado 2l → área (2l)² = 4l²."
+    },
+    {
+      "id": "MAT-014", "cuadernillo": 2, "componente": "Geometría", "competencia": "Formulación y ejecución", "dificultad": "baja", "tipo": "unica",
+      "enunciado": "Dos ángulos de un triángulo miden 50° y 65°. ¿Cuánto mide el tercer ángulo?",
+      "opciones": [
+        {"texto": "65°", "correcta": true},
+        {"texto": "75°"},
+        {"texto": "115°", "retro": "115° es la suma de los dos ángulos dados; falta restarla de 180°."},
+        {"texto": "245°"}
+      ],
+      "retro": "Los ángulos internos de un triángulo suman 180°: 180° − 50° − 65° = 65°."
+    },
+    {
+      "id": "MAT-015", "cuadernillo": 2, "componente": "Geometría", "competencia": "Interpretación y representación", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "En un mapa a escala 1:50.000, dos pueblos están a 6 cm de distancia. ¿Cuál es la distancia real entre ellos?",
+      "opciones": [
+        {"texto": "3 km", "correcta": true},
+        {"texto": "30 km"},
+        {"texto": "300 m"},
+        {"texto": "0,3 km"}
+      ],
+      "retro": "6 cm × 50.000 = 300.000 cm = 3.000 m = 3 km."
+    },
+    {
+      "id": "MAT-016", "cuadernillo": 1, "componente": "Estadística y probabilidad", "competencia": "Interpretación y representación", "dificultad": "baja", "tipo": "unica",
+      "enunciado": "Las notas de Pedro en cinco quices fueron 3,0; 4,0; 3,5; 4,5 y 5,0. ¿Cuál es su promedio?",
+      "opciones": [
+        {"texto": "4,0", "correcta": true},
+        {"texto": "3,5"},
+        {"texto": "4,5"},
+        {"texto": "4,2"}
+      ],
+      "retro": "Suma: 3,0 + 4,0 + 3,5 + 4,5 + 5,0 = 20. Promedio: 20 ÷ 5 = 4,0."
+    },
+    {
+      "id": "MAT-017", "cuadernillo": 1, "componente": "Estadística y probabilidad", "competencia": "Interpretación y representación", "dificultad": "media", "tipo": "multiple",
+      "enunciado": "En un curso de 30 estudiantes, 18 prefieren el fútbol y el resto prefiere el baloncesto. ¿Cuáles afirmaciones son correctas? Seleccione todas las correctas.",
+      "opciones": [
+        {"texto": "El 60 % de los estudiantes prefiere el fútbol.", "correcta": true},
+        {"texto": "Por cada 3 estudiantes que prefieren el fútbol, 2 prefieren el baloncesto.", "correcta": true},
+        {"texto": "12 estudiantes prefieren el fútbol."},
+        {"texto": "El 40 % de los estudiantes prefiere el fútbol."}
+      ],
+      "retro": "18 ÷ 30 = 60 %. Los otros 12 prefieren baloncesto, y 18 a 12 es lo mismo que 3 a 2."
+    },
+    {
+      "id": "MAT-018", "cuadernillo": 2, "componente": "Estadística y probabilidad", "competencia": "Argumentación", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "Una moneda se lanzó 4 veces y en todas salió cara. Juan dice que en el siguiente lanzamiento es más probable que salga sello. ¿Tiene razón?",
+      "opciones": [
+        {"texto": "No, porque cada lanzamiento es independiente y la probabilidad de sello sigue siendo 1/2.", "correcta": true},
+        {"texto": "Sí, porque después de muchas caras tiene que salir sello."},
+        {"texto": "No, porque ahora es más probable que vuelva a salir cara."},
+        {"texto": "Sí, porque la probabilidad de sello ahora es 4/5."}
+      ],
+      "retro": "La moneda no tiene memoria: los resultados anteriores no cambian la probabilidad del siguiente lanzamiento."
+    },
+    {
+      "id": "MAT-019", "cuadernillo": 2, "componente": "Estadística y probabilidad", "competencia": "Formulación y ejecución", "dificultad": "media", "tipo": "unica",
+      "enunciado": "En una bolsa hay 3 balotas rojas, 5 azules y 2 verdes. Si se saca una balota al azar, ¿cuál es la probabilidad de que sea azul?",
+      "opciones": [
+        {"texto": "1/2", "correcta": true},
+        {"texto": "1/5"},
+        {"texto": "5/8", "retro": "El total de balotas es 10, no 8."},
+        {"texto": "1/3"}
+      ],
+      "retro": "Casos favorables: 5. Casos posibles: 3 + 5 + 2 = 10. Probabilidad: 5/10 = 1/2."
+    },
+    {
+      "id": "MAT-020", "cuadernillo": 2, "componente": "Estadística y probabilidad", "competencia": "Interpretación y representación", "dificultad": "media", "tipo": "unica",
+      "enunciado": "¿Cuál es la mediana de los datos 7, 2, 9, 4 y 5?",
+      "opciones": [
+        {"texto": "5", "correcta": true},
+        {"texto": "9", "retro": "Para hallar la mediana hay que ordenar los datos primero."},
+        {"texto": "5,4", "retro": "5,4 es el promedio, no la mediana."},
+        {"texto": "4"}
+      ],
+      "retro": "Ordenados: 2, 4, 5, 7, 9. El dato del centro es 5."
+    }
+  ]
+}

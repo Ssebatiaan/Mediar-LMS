@@ -1,0 +1,55 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_mediar/proximas
+
+    Panel "Próximas actividades": línea de tiempo con fecha, actividad (enlace) y curso.
+
+    Example context (json):
+    {
+        "total": 2, "hayitems": true, "urltodas": "#", "urlcalendario": "#",
+        "items": [{"dia": "26 de noviembre", "hora": "17:00", "titulo": "Cierre de Cuadernillo 3",
+                   "curso": "MATEMÁTICAS-1119-2027", "url": "#", "escierre": true, "pronto": true}]
+    }
+}}
+<section class="mediar-panel mediar-proximas" aria-labelledby="mediar-proximas-titulo">
+    <header class="mediar-panel-header">
+        <h2 id="mediar-proximas-titulo" class="mediar-panel-titulo">
+            {{#str}}proximas, local_mediar{{/str}}
+            <span class="mediar-contador" aria-label="{{#str}}totalproximas, local_mediar, {{total}}{{/str}}">{{total}}</span>
+        </h2>
+        <a class="mediar-enlace-suave" href="{{urltodas}}">{{#str}}vertodas, local_mediar{{/str}}</a>
+    </header>
+    {{#hayitems}}
+    <ol class="mediar-timeline">
+        {{#items}}
+        <li class="mediar-timeline-item{{#escierre}} es-cierre{{/escierre}}{{#pronto}} es-pronto{{/pronto}}">
+            <span class="mediar-timeline-punto" aria-hidden="true"></span>
+            <div class="mediar-timeline-fecha">{{dia}} • {{hora}}</div>
+            <a class="mediar-timeline-titulo" href="{{url}}">{{titulo}}</a>
+            <div class="mediar-timeline-curso">{{curso}}</div>
+        </li>
+        {{/items}}
+    </ol>
+    {{/hayitems}}
+    {{^hayitems}}
+    <p class="mediar-vacio">{{#str}}sinproximas, local_mediar{{/str}}</p>
+    {{/hayitems}}
+    <a class="btn mediar-btn-suave w-100" href="{{urlcalendario}}">
+        {{#pix}}i/calendar, core{{/pix}} {{#str}}vercalendario, local_mediar{{/str}}
+    </a>
+</section>

@@ -1,0 +1,222 @@
+{
+  "area": "sociales",
+  "banco": "Sociales y Ciudadanas",
+  "prefijo": "SOC",
+  "componentes": ["Constitución y ciudadanía", "Historia", "Geografía y ambiente", "Economía y sociedad"],
+  "competencias": ["Pensamiento social", "Interpretación y análisis de perspectivas", "Pensamiento reflexivo y sistémico"],
+  "textos": {
+    "V": "<p>En un municipio, el alcalde propone construir una vía que atraviesa un humedal. Los comerciantes apoyan el proyecto porque reducirá el tiempo de transporte de sus productos. Un grupo ambientalista se opone porque el humedal regula las inundaciones y es hogar de varias especies de aves.</p>"
+  },
+  "preguntas": [
+    {
+      "id": "SOC-001", "cuadernillo": 1, "componente": "Constitución y ciudadanía", "competencia": "Pensamiento social", "dificultad": "baja", "tipo": "unica",
+      "enunciado": "¿Qué mecanismo establece la Constitución de 1991 para proteger de forma rápida los derechos fundamentales de una persona?",
+      "opciones": [
+        {"texto": "La acción de tutela.", "correcta": true},
+        {"texto": "El referendo.", "retro": "El referendo sirve para que los ciudadanos aprueben o rechacen normas."},
+        {"texto": "El cabildo abierto."},
+        {"texto": "La moción de censura.", "retro": "La moción de censura es un control del Congreso sobre los ministros."}
+      ],
+      "retro": "La tutela permite a cualquier persona pedir a un juez la protección inmediata de sus derechos fundamentales."
+    },
+    {
+      "id": "SOC-002", "cuadernillo": 1, "componente": "Constitución y ciudadanía", "competencia": "Pensamiento social", "dificultad": "media", "tipo": "unica",
+      "enunciado": "En Colombia el poder público se divide en ramas. ¿Cuál es la función principal de la rama legislativa?",
+      "opciones": [
+        {"texto": "Hacer las leyes y ejercer control político sobre el gobierno.", "correcta": true},
+        {"texto": "Administrar justicia.", "retro": "Esa es la función de la rama judicial."},
+        {"texto": "Ejecutar las leyes y dirigir el gobierno.", "retro": "Esa es la función de la rama ejecutiva."},
+        {"texto": "Organizar las elecciones."}
+      ],
+      "retro": "La rama legislativa la ejerce el Congreso (Senado y Cámara de Representantes)."
+    },
+    {
+      "id": "SOC-003", "cuadernillo": 2, "componente": "Geografía y ambiente", "competencia": "Interpretación y análisis de perspectivas", "dificultad": "media", "tipo": "unica", "texto": "V",
+      "enunciado": "¿Qué tienen en común las posturas de los comerciantes y del grupo ambientalista?",
+      "opciones": [
+        {"texto": "Ambas defienden un interés que consideran beneficioso para la comunidad.", "correcta": true},
+        {"texto": "Ambas rechazan la propuesta del alcalde."},
+        {"texto": "Ambas ponen la economía por encima del ambiente."},
+        {"texto": "Ambas desconocen la importancia del humedal."}
+      ],
+      "retro": "Unos priorizan el transporte y otros la protección del ecosistema, pero los dos argumentan en nombre de un bien común."
+    },
+    {
+      "id": "SOC-004", "cuadernillo": 2, "componente": "Constitución y ciudadanía", "competencia": "Pensamiento reflexivo y sistémico", "dificultad": "alta", "tipo": "unica", "texto": "V",
+      "enunciado": "¿Qué mecanismo de participación permitiría que los habitantes del municipio decidan sobre la construcción de la vía?",
+      "opciones": [
+        {"texto": "Una consulta popular en el municipio.", "correcta": true},
+        {"texto": "Una acción de tutela presentada por el alcalde."},
+        {"texto": "Un decreto del presidente de la República."},
+        {"texto": "Una moción de censura contra los comerciantes."}
+      ],
+      "retro": "La consulta popular es un mecanismo de participación ciudadana para decidir asuntos de interés local."
+    },
+    {
+      "id": "SOC-005", "cuadernillo": 1, "componente": "Constitución y ciudadanía", "competencia": "Pensamiento social", "dificultad": "baja", "tipo": "vf",
+      "enunciado": "Según la Constitución de 1991, Colombia es un Estado social de derecho.",
+      "respuesta": true,
+      "retro": "Así lo establece el artículo 1 de la Constitución Política."
+    },
+    {
+      "id": "SOC-006", "cuadernillo": 1, "componente": "Historia", "competencia": "Pensamiento social", "dificultad": "media", "tipo": "unica",
+      "enunciado": "El Frente Nacional (1958-1974) fue un acuerdo mediante el cual…",
+      "opciones": [
+        {"texto": "los partidos Liberal y Conservador se alternaron la presidencia y se repartieron los cargos públicos.", "correcta": true},
+        {"texto": "se redactó la Constitución que hoy rige en Colombia."},
+        {"texto": "Colombia obtuvo su independencia de España."},
+        {"texto": "se abrió la participación política a todos los partidos."}
+      ],
+      "retro": "El acuerdo buscó terminar la violencia bipartidista alternando el poder entre los dos partidos tradicionales."
+    },
+    {
+      "id": "SOC-007", "cuadernillo": 2, "componente": "Historia", "competencia": "Interpretación y análisis de perspectivas", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "¿Qué crítica se le hace con frecuencia al Frente Nacional?",
+      "opciones": [
+        {"texto": "Que limitó la participación política de grupos distintos a los dos partidos tradicionales.", "correcta": true},
+        {"texto": "Que multiplicó el número de partidos en el Congreso."},
+        {"texto": "Que eliminó las elecciones presidenciales."},
+        {"texto": "Que entregó el poder a los militares durante dieciséis años."}
+      ],
+      "retro": "Al repartir el poder solo entre liberales y conservadores, otras fuerzas políticas quedaron excluidas."
+    },
+    {
+      "id": "SOC-008", "cuadernillo": 1, "componente": "Historia", "competencia": "Pensamiento reflexivo y sistémico", "dificultad": "media", "tipo": "unica",
+      "enunciado": "El 9 de abril de 1948 el asesinato de Jorge Eliécer Gaitán desencadenó los disturbios conocidos como el Bogotazo. ¿Con qué proceso se relaciona este hecho?",
+      "opciones": [
+        {"texto": "Con la agudización de la violencia política entre liberales y conservadores.", "correcta": true},
+        {"texto": "Con la independencia de Colombia."},
+        {"texto": "Con el fin del Frente Nacional."},
+        {"texto": "Con la promulgación de la Constitución de 1886."}
+      ],
+      "retro": "El Bogotazo se asocia con el recrudecimiento del periodo conocido como La Violencia."
+    },
+    {
+      "id": "SOC-009", "cuadernillo": 2, "componente": "Historia", "competencia": "Interpretación y análisis de perspectivas", "dificultad": "media", "tipo": "multiple",
+      "enunciado": "Un historiador quiere estudiar cómo vivían los campesinos durante La Violencia. ¿Qué fuentes le serían útiles? Seleccione todas las correctas.",
+      "opciones": [
+        {"texto": "Testimonios de personas que vivieron esa época.", "correcta": true},
+        {"texto": "Periódicos regionales publicados en esos años.", "correcta": true},
+        {"texto": "Una película de ciencia ficción reciente."},
+        {"texto": "Publicaciones en redes sociales de este año sobre otro tema."}
+      ],
+      "retro": "Las fuentes primarias (testimonios, prensa de la época) informan directamente sobre el periodo estudiado."
+    },
+    {
+      "id": "SOC-010", "cuadernillo": 2, "componente": "Historia", "competencia": "Pensamiento social", "dificultad": "baja", "tipo": "unica",
+      "enunciado": "La Batalla de Boyacá, decisiva para la independencia de lo que hoy es Colombia, ocurrió en el año…",
+      "opciones": [
+        {"texto": "1819", "correcta": true},
+        {"texto": "1810", "retro": "1810 es el año del grito de independencia del 20 de julio."},
+        {"texto": "1886"},
+        {"texto": "1991"}
+      ],
+      "retro": "La Batalla de Boyacá tuvo lugar el 7 de agosto de 1819."
+    },
+    {
+      "id": "SOC-011", "cuadernillo": 1, "componente": "Geografía y ambiente", "competencia": "Pensamiento social", "dificultad": "baja", "tipo": "unica",
+      "enunciado": "¿En qué región natural de Colombia se encuentran las tres cordilleras de los Andes?",
+      "opciones": [
+        {"texto": "Región Andina", "correcta": true},
+        {"texto": "Región Caribe"},
+        {"texto": "Orinoquía"},
+        {"texto": "Amazonía"}
+      ],
+      "retro": "Las cordilleras Occidental, Central y Oriental forman la región Andina."
+    },
+    {
+      "id": "SOC-012", "cuadernillo": 1, "componente": "Geografía y ambiente", "competencia": "Pensamiento reflexivo y sistémico", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "¿Por qué la deforestación de la Amazonía puede afectar a ciudades que están lejos de la selva?",
+      "opciones": [
+        {"texto": "Porque altera el ciclo del agua y el clima de otras regiones.", "correcta": true},
+        {"texto": "Porque esas ciudades dependen de la madera amazónica para construir."},
+        {"texto": "Porque reduce la población de las ciudades."},
+        {"texto": "No las afecta: sus efectos son solo locales."}
+      ],
+      "retro": "La selva libera humedad que forma lluvias en otras zonas: los ecosistemas están conectados."
+    },
+    {
+      "id": "SOC-013", "cuadernillo": 2, "componente": "Geografía y ambiente", "competencia": "Interpretación y análisis de perspectivas", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Un campesino quiere talar parte de un bosque para ampliar sus cultivos y una autoridad ambiental quiere proteger esa zona. ¿Qué propuesta tiene en cuenta ambas perspectivas?",
+      "opciones": [
+        {"texto": "Apoyar técnicas que aumenten la producción en la tierra ya cultivada y pagar al campesino por conservar el bosque.", "correcta": true},
+        {"texto": "Prohibir toda actividad agrícola en la región."},
+        {"texto": "Permitir talar el bosque sin restricciones."},
+        {"texto": "Trasladar al campesino a la ciudad."}
+      ],
+      "retro": "La propuesta atiende el ingreso del campesino y la conservación del bosque al mismo tiempo."
+    },
+    {
+      "id": "SOC-014", "cuadernillo": 2, "componente": "Geografía y ambiente", "competencia": "Pensamiento social", "dificultad": "baja", "tipo": "corta",
+      "enunciado": "¿Cómo se llama el océano que baña la costa occidental de Colombia? Escriba una sola palabra.",
+      "respuestas": ["Pacífico", "Pacifico"],
+      "retro": "Colombia tiene costas en el mar Caribe (norte) y en el océano Pacífico (occidente)."
+    },
+    {
+      "id": "SOC-015", "cuadernillo": 1, "componente": "Geografía y ambiente", "competencia": "Interpretación y análisis de perspectivas", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Barranquilla está casi a nivel del mar y Bogotá a unos 2.600 metros de altitud. ¿Qué explica principalmente la diferencia de temperatura entre las dos ciudades?",
+      "opciones": [
+        {"texto": "La altitud: a mayor altura, menor temperatura.", "correcta": true},
+        {"texto": "La cercanía al océano Pacífico."},
+        {"texto": "El número de habitantes de cada ciudad."},
+        {"texto": "La cantidad de industrias de cada ciudad."}
+      ],
+      "retro": "En Colombia, por estar en la zona tropical, el principal factor del clima es la altitud (pisos térmicos)."
+    },
+    {
+      "id": "SOC-016", "cuadernillo": 1, "componente": "Economía y sociedad", "competencia": "Pensamiento social", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Cuando los precios de la mayoría de bienes y servicios suben de forma general y sostenida, se habla de…",
+      "opciones": [
+        {"texto": "inflación.", "correcta": true},
+        {"texto": "deflación.", "retro": "La deflación es la caída general de los precios."},
+        {"texto": "desempleo."},
+        {"texto": "exportación."}
+      ],
+      "retro": "La inflación reduce el poder de compra del dinero."
+    },
+    {
+      "id": "SOC-017", "cuadernillo": 2, "componente": "Economía y sociedad", "competencia": "Pensamiento reflexivo y sistémico", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "Si el precio internacional del petróleo baja mucho, ¿qué efecto es más probable en un país cuyas exportaciones dependen del petróleo?",
+      "opciones": [
+        {"texto": "Disminuyen los ingresos del Estado y puede ser necesario recortar gastos o buscar otras fuentes de ingreso.", "correcta": true},
+        {"texto": "Aumentan automáticamente los salarios de los trabajadores."},
+        {"texto": "No hay ningún efecto en la economía del país."},
+        {"texto": "El país exporta más petróleo y gana más dinero."}
+      ],
+      "retro": "Si el producto principal de exportación vale menos, entran menos divisas e ingresos fiscales."
+    },
+    {
+      "id": "SOC-018", "cuadernillo": 1, "componente": "Economía y sociedad", "competencia": "Interpretación y análisis de perspectivas", "dificultad": "media", "tipo": "unica",
+      "enunciado": "En una discusión sobre el salario mínimo, una empresaria dice que un aumento muy alto puede reducir el empleo formal; un trabajador dice que el aumento es necesario para cubrir el costo de vida. ¿Qué se puede afirmar?",
+      "opciones": [
+        {"texto": "Ambos plantean efectos posibles desde intereses distintos, y la decisión implica equilibrar el costo de vida y el empleo.", "correcta": true},
+        {"texto": "Solo la empresaria tiene razón porque conoce la economía."},
+        {"texto": "Solo el trabajador tiene razón porque representa a la mayoría."},
+        {"texto": "Ninguno tiene razón porque el salario mínimo no afecta la economía."}
+      ],
+      "retro": "Analizar perspectivas implica reconocer los intereses y argumentos de cada actor."
+    },
+    {
+      "id": "SOC-019", "cuadernillo": 2, "componente": "Constitución y ciudadanía", "competencia": "Pensamiento social", "dificultad": "media", "tipo": "unica",
+      "enunciado": "¿Qué derecho garantiza que las personas puedan difundir sus opiniones sin censura previa?",
+      "opciones": [
+        {"texto": "La libertad de expresión.", "correcta": true},
+        {"texto": "El derecho de petición."},
+        {"texto": "El derecho al trabajo."},
+        {"texto": "La libertad de cultos."}
+      ],
+      "retro": "La Constitución garantiza la libertad de expresar y difundir el pensamiento y las opiniones."
+    },
+    {
+      "id": "SOC-020", "cuadernillo": 2, "componente": "Economía y sociedad", "competencia": "Pensamiento reflexivo y sistémico", "dificultad": "media", "tipo": "unica",
+      "enunciado": "En un colegio, el gobierno escolar propone que los estudiantes participen en la definición de las normas de convivencia. ¿Qué principio constitucional se promueve?",
+      "opciones": [
+        {"texto": "La democracia participativa.", "correcta": true},
+        {"texto": "La centralización del poder."},
+        {"texto": "La separación de las ramas del poder público."},
+        {"texto": "La soberanía nacional frente a otros Estados."}
+      ],
+      "retro": "La Constitución de 1991 promueve la participación de las personas en las decisiones que las afectan."
+    }
+  ]
+}

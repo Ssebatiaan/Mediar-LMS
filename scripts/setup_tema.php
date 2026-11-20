@@ -69,10 +69,12 @@ foreach ($DB->get_records_select('course', 'id <> ?', [SITEID], 'id', 'id, short
             $area = (int) $data->get_value();
         }
     }
-    if (empty($imagenes[$area])) {
+    // Cursos sin área: el Banco de preguntas tiene su propia imagen.
+    $archivo = !empty($imagenes[$area]) ? $imagenes[$area] . '.png'
+        : ($DB->get_field('course', 'idnumber', ['id' => $course->id]) === 'BANCO' ? 'banco.png' : null);
+    if (!$archivo) {
         continue;
     }
-    $archivo = $imagenes[$area] . '.png';
     reemplazar_archivo(context_course::instance($course->id)->id, 'course', 'overviewfiles',
         "$assets/cursos/$archivo", $archivo);
     $n++;

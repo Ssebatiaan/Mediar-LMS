@@ -1,0 +1,226 @@
+{
+  "area": "ingles",
+  "banco": "Inglés",
+  "prefijo": "ING",
+  "componentes": ["Avisos y vocabulario", "Gramática en contexto", "Comprensión de lectura"],
+  "competencias": ["Comprensión de avisos y léxico", "Uso del lenguaje", "Comprensión lectora"],
+  "textos": {
+    "S": "<p class='mediar-contexto-titulo'>Read the text and answer the questions.</p><p><strong>Sara's first job</strong></p><p>Last summer, Sara worked at a small bookshop in her town. At first she was nervous because she had to talk to many customers, and she was not sure she could remember where every book was. Her manager, Mr. Díaz, gave her a map of the shop and told her to ask questions whenever she needed help.</p><p>After two weeks, Sara knew the shop so well that she started recommending books to customers. By the end of the summer, she had saved enough money to buy a new laptop for university, and she had discovered that she wants to study literature.</p>"
+  },
+  "preguntas": [
+    {
+      "id": "ING-001", "cuadernillo": 1, "componente": "Avisos y vocabulario", "competencia": "Comprensión de avisos y léxico", "dificultad": "baja", "tipo": "unica",
+      "contexto": "<p class='mediar-aviso'>PLEASE KEEP YOUR SEATBELT FASTENED</p>",
+      "enunciado": "Where can you see this notice?",
+      "opciones": [
+        {"texto": "On a plane", "correcta": true},
+        {"texto": "In a library"},
+        {"texto": "In a supermarket"},
+        {"texto": "In a classroom"}
+      ],
+      "retro": "«Seatbelt» es el cinturón de seguridad: el aviso es típico de un avión."
+    },
+    {
+      "id": "ING-002", "cuadernillo": 1, "componente": "Avisos y vocabulario", "competencia": "Comprensión de avisos y léxico", "dificultad": "baja", "tipo": "unica",
+      "contexto": "<p class='mediar-aviso'>NO FOOD OR DRINKS NEAR THE COMPUTERS</p>",
+      "enunciado": "Where can you see this notice?",
+      "opciones": [
+        {"texto": "In a computer room", "correcta": true},
+        {"texto": "In a restaurant"},
+        {"texto": "At a swimming pool"},
+        {"texto": "In a kitchen"}
+      ],
+      "retro": "El aviso prohíbe comida y bebidas cerca de los computadores."
+    },
+    {
+      "id": "ING-003", "cuadernillo": 2, "componente": "Avisos y vocabulario", "competencia": "Comprensión de avisos y léxico", "dificultad": "media", "tipo": "unica",
+      "contexto": "<p class='mediar-aviso'>CONCERT TONIGHT · TICKETS SOLD OUT</p>",
+      "enunciado": "What does this notice mean?",
+      "opciones": [
+        {"texto": "There are no more tickets for the concert.", "correcta": true},
+        {"texto": "The tickets are free."},
+        {"texto": "You can buy tickets outside."},
+        {"texto": "The tickets are on sale today."}
+      ],
+      "retro": "«Sold out» significa agotado."
+    },
+    {
+      "id": "ING-004", "cuadernillo": 1, "componente": "Avisos y vocabulario", "competencia": "Comprensión de avisos y léxico", "dificultad": "media", "tipo": "corta",
+      "enunciado": "You use this to cut paper. It has two blades. What is it? Write one word.",
+      "respuestas": ["scissors", "a pair of scissors"],
+      "retro": "Scissors = tijeras."
+    },
+    {
+      "id": "ING-005", "cuadernillo": 2, "componente": "Avisos y vocabulario", "competencia": "Comprensión de avisos y léxico", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Which word matches this definition? «A person who travels to visit places for pleasure.»",
+      "opciones": [
+        {"texto": "tourist", "correcta": true},
+        {"texto": "doctor"},
+        {"texto": "farmer"},
+        {"texto": "pilot", "retro": "Un piloto viaja por trabajo, no por placer."}
+      ],
+      "retro": "Tourist = turista."
+    },
+    {
+      "id": "ING-006", "cuadernillo": 2, "componente": "Avisos y vocabulario", "competencia": "Comprensión de avisos y léxico", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Complete the sentence: «I'm really ____. I haven't eaten anything since breakfast.»",
+      "opciones": [
+        {"texto": "hungry", "correcta": true},
+        {"texto": "tired"},
+        {"texto": "thirsty", "retro": "Thirsty = con sed; la frase habla de comer."},
+        {"texto": "angry"}
+      ],
+      "retro": "Hungry = con hambre."
+    },
+    {
+      "id": "ING-007", "cuadernillo": 1, "componente": "Avisos y vocabulario", "competencia": "Comprensión de avisos y léxico", "dificultad": "media", "tipo": "vf",
+      "contexto": "<p class='mediar-aviso'>STAFF ONLY</p>",
+      "enunciado": "This notice means that any visitor can enter this area.",
+      "respuesta": false,
+      "retro": "«Staff only» significa solo personal autorizado: los visitantes no pueden entrar."
+    },
+    {
+      "id": "ING-008", "cuadernillo": 1, "componente": "Gramática en contexto", "competencia": "Uso del lenguaje", "dificultad": "baja", "tipo": "unica",
+      "enunciado": "Complete the sentence: «She ____ to school every day.»",
+      "opciones": [
+        {"texto": "goes", "correcta": true},
+        {"texto": "go", "retro": "Con she/he/it en presente simple el verbo lleva -s o -es."},
+        {"texto": "going"},
+        {"texto": "gone"}
+      ],
+      "retro": "Presente simple, tercera persona del singular: she goes."
+    },
+    {
+      "id": "ING-009", "cuadernillo": 1, "componente": "Gramática en contexto", "competencia": "Uso del lenguaje", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Complete the sentence: «Yesterday we ____ a great movie.»",
+      "opciones": [
+        {"texto": "watched", "correcta": true},
+        {"texto": "watch"},
+        {"texto": "are watching"},
+        {"texto": "will watch"}
+      ],
+      "retro": "«Yesterday» indica pasado: se usa el pasado simple (watched)."
+    },
+    {
+      "id": "ING-010", "cuadernillo": 2, "componente": "Gramática en contexto", "competencia": "Uso del lenguaje", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Complete the sentence: «If it rains tomorrow, we ____ at home.»",
+      "opciones": [
+        {"texto": "will stay", "correcta": true},
+        {"texto": "stayed"},
+        {"texto": "would have stayed"},
+        {"texto": "staying"}
+      ],
+      "retro": "Primer condicional: if + presente, will + verbo."
+    },
+    {
+      "id": "ING-011", "cuadernillo": 2, "componente": "Gramática en contexto", "competencia": "Uso del lenguaje", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Complete the sentence: «This is the ____ book I have ever read.»",
+      "opciones": [
+        {"texto": "best", "correcta": true},
+        {"texto": "good"},
+        {"texto": "better", "retro": "Better es comparativo; aquí se necesita el superlativo."},
+        {"texto": "most good"}
+      ],
+      "retro": "Superlativo de good: the best."
+    },
+    {
+      "id": "ING-012", "cuadernillo": 1, "componente": "Gramática en contexto", "competencia": "Uso del lenguaje", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "Choose the best answer. A: «Have you finished your homework?» B: «____»",
+      "opciones": [
+        {"texto": "Not yet. I'll do it after dinner.", "correcta": true},
+        {"texto": "Yes, I'm doing it tomorrow."},
+        {"texto": "No, I finished it yesterday."},
+        {"texto": "I don't like homework yesterday."}
+      ],
+      "retro": "«Not yet» (todavía no) responde de forma coherente a «Have you finished…?»."
+    },
+    {
+      "id": "ING-013", "cuadernillo": 2, "componente": "Gramática en contexto", "competencia": "Uso del lenguaje", "dificultad": "media", "tipo": "multiple",
+      "enunciado": "Which sentences are grammatically correct? Select all the correct answers.",
+      "opciones": [
+        {"texto": "There are three students in the room.", "correcta": true},
+        {"texto": "He doesn't like coffee.", "correcta": true},
+        {"texto": "She don't have a car.", "retro": "Con she se usa doesn't."},
+        {"texto": "They was at home.", "retro": "Con they se usa were."}
+      ],
+      "retro": "Concordancia sujeto-verbo: she doesn't, they were."
+    },
+    {
+      "id": "ING-014", "cuadernillo": 2, "componente": "Gramática en contexto", "competencia": "Uso del lenguaje", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "Complete the sentence: «I have lived in Cartagena ____ 2019.»",
+      "opciones": [
+        {"texto": "since", "correcta": true},
+        {"texto": "for", "retro": "For se usa con períodos de tiempo (for five years)."},
+        {"texto": "ago"},
+        {"texto": "during"}
+      ],
+      "retro": "Since + punto de inicio en el tiempo (since 2019)."
+    },
+    {
+      "id": "ING-015", "cuadernillo": 1, "componente": "Comprensión de lectura", "competencia": "Comprensión lectora", "dificultad": "baja", "tipo": "unica", "texto": "S",
+      "enunciado": "Where did Sara work last summer?",
+      "opciones": [
+        {"texto": "In a bookshop", "correcta": true},
+        {"texto": "In a library"},
+        {"texto": "At a university"},
+        {"texto": "At a school"}
+      ],
+      "retro": "«Sara worked at a small bookshop in her town»."
+    },
+    {
+      "id": "ING-016", "cuadernillo": 1, "componente": "Comprensión de lectura", "competencia": "Comprensión lectora", "dificultad": "media", "tipo": "unica", "texto": "S",
+      "enunciado": "Why was Sara nervous at first?",
+      "opciones": [
+        {"texto": "Because she had to talk to many customers and remember where the books were.", "correcta": true},
+        {"texto": "Because her manager was angry with her."},
+        {"texto": "Because she didn't like books."},
+        {"texto": "Because the shop was very big and dark."}
+      ],
+      "retro": "El primer párrafo explica sus dos preocupaciones."
+    },
+    {
+      "id": "ING-017", "cuadernillo": 2, "componente": "Comprensión de lectura", "competencia": "Comprensión lectora", "dificultad": "media", "tipo": "unica", "texto": "S",
+      "enunciado": "What did Mr. Díaz do to help Sara?",
+      "opciones": [
+        {"texto": "He gave her a map of the shop.", "correcta": true},
+        {"texto": "He bought her a laptop."},
+        {"texto": "He recommended books to her."},
+        {"texto": "He did her work for her."}
+      ],
+      "retro": "«Mr. Díaz gave her a map of the shop and told her to ask questions»."
+    },
+    {
+      "id": "ING-018", "cuadernillo": 2, "componente": "Comprensión de lectura", "competencia": "Comprensión lectora", "dificultad": "alta", "tipo": "unica", "texto": "S",
+      "enunciado": "What can we infer about Sara at the end of the summer?",
+      "opciones": [
+        {"texto": "She felt more confident and found a career she is interested in.", "correcta": true},
+        {"texto": "She wants to work at the bookshop forever."},
+        {"texto": "She didn't enjoy her job."},
+        {"texto": "She lost the money she saved."}
+      ],
+      "retro": "Empezó a recomendar libros (más confianza) y descubrió que quiere estudiar literatura."
+    },
+    {
+      "id": "ING-019", "cuadernillo": 1, "componente": "Comprensión de lectura", "competencia": "Comprensión lectora", "dificultad": "media", "tipo": "unica", "texto": "S",
+      "enunciado": "What did Sara buy with the money she saved?",
+      "opciones": [
+        {"texto": "A new laptop", "correcta": true},
+        {"texto": "A bicycle"},
+        {"texto": "Some books"},
+        {"texto": "A map"}
+      ],
+      "retro": "«She had saved enough money to buy a new laptop for university»."
+    },
+    {
+      "id": "ING-020", "cuadernillo": 2, "componente": "Comprensión de lectura", "competencia": "Comprensión lectora", "dificultad": "alta", "tipo": "unica", "texto": "S",
+      "enunciado": "What is the best title for the text?",
+      "opciones": [
+        {"texto": "How a summer job changed Sara's plans", "correcta": true},
+        {"texto": "The history of a bookshop"},
+        {"texto": "Why laptops are expensive"},
+        {"texto": "Mr. Díaz's favourite books"}
+      ],
+      "retro": "El texto cuenta cómo el trabajo de verano influyó en lo que Sara quiere estudiar."
+    }
+  ]
+}

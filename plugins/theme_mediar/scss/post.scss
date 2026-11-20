@@ -294,7 +294,49 @@ body.pagelayout-login #page .login-layout-left {
 }
 
 // ===========================================================================
-// 9. Detalles
+// 9. Preguntas tipo ICFES (textos de contexto, avisos y tablas del banco)
+// ===========================================================================
+.que .mediar-contexto {
+    margin-bottom: 1rem;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid $mediar-naranja;
+    border-radius: 0 $border-radius $border-radius 0;
+    background-color: var(--bs-tertiary-bg);
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    .mediar-contexto-titulo {
+        font-family: $mediar-fuente-titulos;
+        font-weight: 600;
+    }
+
+    .mediar-tabla {
+        width: auto;
+        margin-bottom: .5rem;
+
+        th {
+            background-color: rgba($mediar-naranja, .12);
+        }
+    }
+}
+
+// Avisos de Inglés: cartel con borde, como en la prueba.
+.que .mediar-aviso {
+    display: inline-block;
+    margin: 0;
+    padding: .75rem 1.5rem;
+    border: 3px double var(--bs-emphasis-color);
+    border-radius: $border-radius-sm;
+    font-family: $mediar-fuente-titulos;
+    font-weight: 700;
+    letter-spacing: .04em;
+    background-color: var(--bs-body-bg);
+}
+
+// ===========================================================================
+// 10. Detalles
 // ===========================================================================
 // Barras de progreso de curso.
 .progress-bar {

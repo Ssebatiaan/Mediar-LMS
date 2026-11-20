@@ -1,0 +1,219 @@
+{
+  "area": "naturales",
+  "banco": "Ciencias Naturales",
+  "prefijo": "NAT",
+  "componentes": ["Biología", "Química", "Física", "Ciencia, tecnología y sociedad"],
+  "competencias": ["Uso comprensivo del conocimiento científico", "Explicación de fenómenos", "Indagación"],
+  "preguntas": [
+    {
+      "id": "NAT-001", "cuadernillo": 1, "componente": "Biología", "competencia": "Uso comprensivo del conocimiento científico", "dificultad": "baja", "tipo": "unica",
+      "enunciado": "¿Qué organelo de la célula vegetal realiza la fotosíntesis?",
+      "opciones": [
+        {"texto": "El cloroplasto.", "correcta": true},
+        {"texto": "La mitocondria.", "retro": "La mitocondria realiza la respiración celular."},
+        {"texto": "El núcleo."},
+        {"texto": "El ribosoma."}
+      ],
+      "retro": "Los cloroplastos contienen clorofila, que capta la energía de la luz."
+    },
+    {
+      "id": "NAT-002", "cuadernillo": 1, "componente": "Biología", "competencia": "Explicación de fenómenos", "dificultad": "media", "tipo": "unica",
+      "enunciado": "¿Por qué las plantas necesitan luz para crecer?",
+      "opciones": [
+        {"texto": "Porque usan la energía de la luz para fabricar glucosa a partir de agua y dióxido de carbono.", "correcta": true},
+        {"texto": "Porque la luz les da el calor que necesitan para no congelarse."},
+        {"texto": "Porque absorben la luz por las raíces como alimento."},
+        {"texto": "Porque la luz elimina los insectos que las atacan."}
+      ],
+      "retro": "En la fotosíntesis, la energía luminosa se transforma en energía química (glucosa)."
+    },
+    {
+      "id": "NAT-003", "cuadernillo": 2, "componente": "Biología", "competencia": "Indagación", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "Un estudiante pone dos plantas iguales en las mismas condiciones de agua, tierra y temperatura, pero una recibe luz y la otra no. ¿Cuál es la variable independiente del experimento?",
+      "opciones": [
+        {"texto": "La cantidad de luz que recibe cada planta.", "correcta": true},
+        {"texto": "El crecimiento de las plantas.", "retro": "El crecimiento es lo que se mide: la variable dependiente."},
+        {"texto": "El tipo de planta."},
+        {"texto": "La cantidad de agua."}
+      ],
+      "retro": "La variable independiente es la que el investigador cambia a propósito; las demás se mantienen iguales."
+    },
+    {
+      "id": "NAT-004", "cuadernillo": 2, "componente": "Biología", "competencia": "Uso comprensivo del conocimiento científico", "dificultad": "media", "tipo": "unica",
+      "enunciado": "En las arvejas, el color amarillo (A) es dominante sobre el verde (a). Si se cruzan dos plantas Aa, ¿qué proporción de la descendencia se espera que sea verde?",
+      "opciones": [
+        {"texto": "1/4", "correcta": true},
+        {"texto": "1/2"},
+        {"texto": "3/4", "retro": "3/4 es la proporción esperada de semillas amarillas."},
+        {"texto": "Ninguna"}
+      ],
+      "retro": "Aa × Aa da AA, Aa, Aa y aa. Solo aa (1 de 4) es verde."
+    },
+    {
+      "id": "NAT-005", "cuadernillo": 1, "componente": "Biología", "competencia": "Explicación de fenómenos", "dificultad": "baja", "tipo": "vf",
+      "enunciado": "En una cadena alimenticia, la energía pasa de los productores a los consumidores.",
+      "respuesta": true,
+      "retro": "Los productores (plantas) captan la energía y los consumidores la obtienen al alimentarse."
+    },
+    {
+      "id": "NAT-006", "cuadernillo": 1, "componente": "Química", "competencia": "Uso comprensivo del conocimiento científico", "dificultad": "baja", "tipo": "unica",
+      "enunciado": "¿Cuál de las siguientes es una mezcla homogénea?",
+      "opciones": [
+        {"texto": "Agua con sal disuelta.", "correcta": true},
+        {"texto": "Agua con aceite."},
+        {"texto": "Arena con piedras."},
+        {"texto": "Una ensalada de frutas."}
+      ],
+      "retro": "En una mezcla homogénea no se distinguen sus componentes a simple vista."
+    },
+    {
+      "id": "NAT-007", "cuadernillo": 1, "componente": "Química", "competencia": "Explicación de fenómenos", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Un clavo de hierro que se deja a la intemperie se cubre de óxido. ¿Qué tipo de cambio ocurre?",
+      "opciones": [
+        {"texto": "Un cambio químico, porque se forma una sustancia nueva.", "correcta": true},
+        {"texto": "Un cambio físico, porque el clavo sigue siendo de hierro."},
+        {"texto": "Un cambio de estado, porque el hierro se derrite."},
+        {"texto": "No hay ningún cambio en el material."}
+      ],
+      "retro": "El hierro reacciona con el oxígeno y el agua y forma óxido de hierro, una sustancia distinta."
+    },
+    {
+      "id": "NAT-008", "cuadernillo": 2, "componente": "Química", "competencia": "Uso comprensivo del conocimiento científico", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Una sustancia tiene un pH de 3. ¿Cómo se clasifica?",
+      "opciones": [
+        {"texto": "Ácida", "correcta": true},
+        {"texto": "Básica"},
+        {"texto": "Neutra", "retro": "Una sustancia neutra tiene pH 7."},
+        {"texto": "No se puede saber sin más datos."}
+      ],
+      "retro": "En la escala de pH, los valores menores que 7 son ácidos y los mayores que 7 son básicos."
+    },
+    {
+      "id": "NAT-009", "cuadernillo": 2, "componente": "Química", "competencia": "Indagación", "dificultad": "alta", "tipo": "multiple",
+      "enunciado": "Un grupo quiere comprobar si la temperatura del agua influye en la rapidez con que se disuelve el azúcar. ¿Qué deben hacer para que el experimento sea válido? Seleccione todas las correctas.",
+      "opciones": [
+        {"texto": "Usar la misma cantidad de azúcar y de agua en todos los vasos.", "correcta": true},
+        {"texto": "Cambiar únicamente la temperatura del agua entre un vaso y otro.", "correcta": true},
+        {"texto": "Usar un tipo de azúcar distinto en cada vaso."},
+        {"texto": "Revolver más el vaso de agua fría."}
+      ],
+      "retro": "Solo debe cambiar la variable que se estudia (temperatura); todo lo demás se controla."
+    },
+    {
+      "id": "NAT-010", "cuadernillo": 1, "componente": "Química", "competencia": "Explicación de fenómenos", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "¿Por qué el agua hierve a menor temperatura en Bogotá que en Cartagena?",
+      "opciones": [
+        {"texto": "Porque a mayor altitud la presión atmosférica es menor.", "correcta": true},
+        {"texto": "Porque en Bogotá hace más frío."},
+        {"texto": "Porque el agua de Bogotá tiene más sales disueltas."},
+        {"texto": "Porque en Bogotá hay más oxígeno en el aire."}
+      ],
+      "retro": "Con menos presión sobre el líquido, el agua necesita menos energía para hervir."
+    },
+    {
+      "id": "NAT-011", "cuadernillo": 1, "componente": "Física", "competencia": "Uso comprensivo del conocimiento científico", "dificultad": "baja", "tipo": "unica",
+      "enunciado": "Un ciclista recorre 30 km en 2 horas. ¿Cuál es su rapidez media?",
+      "opciones": [
+        {"texto": "15 km/h", "correcta": true},
+        {"texto": "60 km/h", "retro": "Se multiplicó en lugar de dividir."},
+        {"texto": "32 km/h"},
+        {"texto": "28 km/h"}
+      ],
+      "retro": "Rapidez media = distancia ÷ tiempo = 30 km ÷ 2 h = 15 km/h."
+    },
+    {
+      "id": "NAT-012", "cuadernillo": 2, "componente": "Física", "competencia": "Explicación de fenómenos", "dificultad": "media", "tipo": "unica",
+      "enunciado": "¿Por qué los pasajeros de un bus se van hacia adelante cuando el bus frena de golpe?",
+      "opciones": [
+        {"texto": "Por la inercia: sus cuerpos tienden a seguir en movimiento.", "correcta": true},
+        {"texto": "Porque el bus los empuja hacia adelante."},
+        {"texto": "Por la fuerza de gravedad."},
+        {"texto": "Porque el aire del bus los empuja."}
+      ],
+      "retro": "Primera ley de Newton: un cuerpo en movimiento tiende a seguir moviéndose si nada lo detiene."
+    },
+    {
+      "id": "NAT-013", "cuadernillo": 1, "componente": "Física", "competencia": "Explicación de fenómenos", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "Se deja caer una pelota desde cierta altura. Mientras cae, sin tener en cuenta el aire, ¿qué ocurre con su energía?",
+      "opciones": [
+        {"texto": "La energía potencial se transforma en energía cinética.", "correcta": true},
+        {"texto": "La energía cinética se transforma en energía potencial."},
+        {"texto": "La energía total de la pelota disminuye."},
+        {"texto": "La pelota no tiene energía hasta que toca el suelo."}
+      ],
+      "retro": "Al bajar pierde altura (energía potencial) y gana velocidad (energía cinética); la energía total se conserva."
+    },
+    {
+      "id": "NAT-014", "cuadernillo": 2, "componente": "Física", "competencia": "Uso comprensivo del conocimiento científico", "dificultad": "media", "tipo": "corta",
+      "enunciado": "Una fuerza neta de 20 N actúa sobre una caja de 4 kg. ¿Cuál es su aceleración en m/s²? Escriba solo el número.",
+      "respuestas": ["5"],
+      "retro": "Segunda ley de Newton: a = F ÷ m = 20 N ÷ 4 kg = 5 m/s²."
+    },
+    {
+      "id": "NAT-015", "cuadernillo": 2, "componente": "Física", "competencia": "Indagación", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Un estudiante conecta dos bombillos en serie a una pila y uno de ellos se funde. ¿Qué observa y por qué?",
+      "opciones": [
+        {"texto": "El otro bombillo se apaga, porque el circuito queda abierto.", "correcta": true},
+        {"texto": "El otro bombillo brilla más, porque recibe toda la energía."},
+        {"texto": "El otro bombillo sigue igual, porque cada uno tiene su propio camino.", "retro": "Eso ocurriría en un circuito en paralelo."},
+        {"texto": "Ambos bombillos se vuelven a encender solos."}
+      ],
+      "retro": "En serie la corriente tiene un solo camino: si se interrumpe en un punto, deja de circular por todo el circuito."
+    },
+    {
+      "id": "NAT-016", "cuadernillo": 1, "componente": "Ciencia, tecnología y sociedad", "competencia": "Explicación de fenómenos", "dificultad": "media", "tipo": "unica",
+      "enunciado": "¿Por qué el uso excesivo de antibióticos es un problema de salud pública?",
+      "opciones": [
+        {"texto": "Porque favorece que sobrevivan y se multipliquen bacterias resistentes.", "correcta": true},
+        {"texto": "Porque los antibióticos fortalecen a los virus."},
+        {"texto": "Porque los antibióticos producen demasiadas vitaminas."},
+        {"texto": "No es un problema: entre más antibióticos, mejor."}
+      ],
+      "retro": "Las bacterias que resisten el antibiótico sobreviven y se reproducen; con el tiempo el medicamento deja de funcionar."
+    },
+    {
+      "id": "NAT-017", "cuadernillo": 2, "componente": "Ciencia, tecnología y sociedad", "competencia": "Indagación", "dificultad": "alta", "tipo": "unica",
+      "enunciado": "Un anuncio dice que una bebida «mejora la memoria» porque 10 personas que la tomaron dijeron sentirse más concentradas. ¿Cuál es la principal debilidad de esa conclusión?",
+      "opciones": [
+        {"texto": "No hubo un grupo de comparación y la muestra es muy pequeña.", "correcta": true},
+        {"texto": "Las personas que participaron eran adultas."},
+        {"texto": "La bebida es costosa."},
+        {"texto": "El anuncio no dice de qué sabor es la bebida."}
+      ],
+      "retro": "Una conclusión científica requiere comparar con un grupo control y una muestra suficiente."
+    },
+    {
+      "id": "NAT-018", "cuadernillo": 1, "componente": "Ciencia, tecnología y sociedad", "competencia": "Uso comprensivo del conocimiento científico", "dificultad": "media", "tipo": "unica",
+      "enunciado": "¿Cuál de las siguientes fuentes de energía es renovable?",
+      "opciones": [
+        {"texto": "La energía solar.", "correcta": true},
+        {"texto": "El carbón."},
+        {"texto": "El petróleo."},
+        {"texto": "El gas natural."}
+      ],
+      "retro": "La energía solar no se agota con el uso; los combustibles fósiles sí."
+    },
+    {
+      "id": "NAT-019", "cuadernillo": 2, "componente": "Ciencia, tecnología y sociedad", "competencia": "Explicación de fenómenos", "dificultad": "media", "tipo": "unica",
+      "enunciado": "¿Por qué el aumento de dióxido de carbono en la atmósfera se relaciona con el calentamiento global?",
+      "opciones": [
+        {"texto": "Porque retiene parte del calor que emite la Tierra, como en un invernadero.", "correcta": true},
+        {"texto": "Porque destruye directamente la capa de ozono.", "retro": "Es una confusión frecuente: el adelgazamiento del ozono se debe sobre todo a otros gases."},
+        {"texto": "Porque aumenta la cantidad de luz que llega del Sol."},
+        {"texto": "Porque enfría los océanos."}
+      ],
+      "retro": "El CO₂ es un gas de efecto invernadero: deja pasar la luz del Sol pero retiene parte del calor."
+    },
+    {
+      "id": "NAT-020", "cuadernillo": 2, "componente": "Ciencia, tecnología y sociedad", "competencia": "Indagación", "dificultad": "media", "tipo": "unica",
+      "enunciado": "Para saber si un río está contaminado, ¿cuál es la mejor forma de investigar?",
+      "opciones": [
+        {"texto": "Tomar muestras de agua en varios puntos y fechas, y analizarlas en un laboratorio.", "correcta": true},
+        {"texto": "Preguntar a una persona si el agua se ve limpia."},
+        {"texto": "Tomar una sola foto del río."},
+        {"texto": "Medir el ancho del río."}
+      ],
+      "retro": "Varias muestras en distintos lugares y momentos dan evidencia confiable."
+    }
+  ]
+}

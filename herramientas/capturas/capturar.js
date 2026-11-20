@@ -33,9 +33,11 @@ const CLAVE = process.env.MEDIAR_CLAVE || 'Mediar2026!';
 
   for (const ruta of rutas) {
     await page.goto(BASE + ruta, { waitUntil: 'networkidle' });
-    await page.waitForTimeout(600);
+    // ESPERA=ms para dar tiempo a las animaciones (gráficos). Por defecto 600 ms.
+    await page.waitForTimeout(parseInt(process.env.ESPERA || '600', 10));
     const nombre = `${usuario === '-' ? 'anonimo' : usuario}_${width}_${ruta.replace(/[^a-z0-9]+/gi, '_').replace(/^_|_$/g, '') || 'inicio'}.png`;
-    await page.screenshot({ path: path.join(salida, nombre), fullPage: false });
+    // COMPLETA=1 captura la página entera (no solo lo visible).
+    await page.screenshot({ path: path.join(salida, nombre), fullPage: process.env.COMPLETA === '1' });
     console.log(nombre, '|', await page.title());
   }
   if (errores.length) console.log('Errores JS:', errores.slice(0, 5));

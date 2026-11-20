@@ -31,6 +31,7 @@ AREAS = {
     "naturales": ("⚛", ["⚗", "H₂O", "∿", "☀", "✿", "⚡"]),
     "ingles": ("EN", ["ABC", "Hi!", "?", "A1", "B1", "✎"]),
     "simulacro": ("500", ["✓", "✓", "A", "B", "C", "D"]),
+    "banco": ("?", ["A", "B", "C", "D", "✎", "✓"]),
 }
 
 
@@ -96,7 +97,7 @@ def main():
 
     # Vista previa en cuadrícula 3x2 (para revisar).
     mini = [im.resize((400, 200)) for im in imagenes]
-    vista = Image.new("RGB", (400 * 3 + 40, 200 * 2 + 30), (245, 245, 245))
+    vista = Image.new("RGB", (400 * 3 + 40, 200 * 3 + 40), (245, 245, 245))
     for n, im in enumerate(mini):
         vista.paste(im, (10 + (n % 3) * 410, 10 + (n // 3) * 210))
     vista.save(SALIDA / "vista-previa.png")

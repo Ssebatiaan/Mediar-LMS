@@ -1,0 +1,152 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_mediar/curso
+
+    Panel de estadísticas de un curso.
+
+    Example context (json):
+    {
+        "nrc": "1119", "colegio": "Colegio Promoción Social", "promocion": "Promoción 2027", "estudiantes": 20,
+        "haydatos": false, "evaluaciones": [], "columnas": [], "filas": [], "exportar": []
+    }
+}}
+<div class="mediar-pagina">
+    <p class="mediar-subtitulo">
+        {{#str}}nrc, local_mediar, {{nrc}}{{/str}} · {{colegio}} · {{promocion}} · {{#str}}nestudiantes, local_mediar, {{estudiantes}}{{/str}}
+    </p>
+
+    <nav class="mediar-pildoras" aria-label="{{#str}}evaluaciones, local_mediar{{/str}}">
+        {{#evaluaciones}}
+        <a href="{{url}}" class="mediar-pildora{{#activa}} es-activa{{/activa}}{{#sinresultados}} es-vacia{{/sinresultados}}"
+           {{#activa}}aria-current="page"{{/activa}}>{{nombre}}</a>
+        {{/evaluaciones}}
+    </nav>
+
+    {{^haydatos}}
+    <div class="mediar-panel"><p class="mediar-vacio mb-0">{{#str}}sinresultados, local_mediar{{/str}}</p></div>
+    {{/haydatos}}
+
+    {{#haydatos}}
+    <h2 class="mediar-seccion-titulo">{{evaluacion}} <a class="mediar-enlace-suave" href="{{urlevaluacion}}">{{#str}}abrirevaluacion, local_mediar{{/str}}</a></h2>
+    {{> local_mediar/kpis }}
+
+    <div class="row g-4">
+        <div class="col-12 col-lg-6">
+            <section class="mediar-panel h-100">
+                <h3 class="mediar-panel-titulo">{{#str}}distribucion, local_mediar{{/str}}</h3>
+                {{{graficodistribucion}}}
+            </section>
+        </div>
+        <div class="col-12 col-lg-6">
+            <section class="mediar-panel h-100">
+                <h3 class="mediar-panel-titulo">{{#str}}evoluciongrupo, local_mediar{{/str}}</h3>
+                {{#graficoevolucion}}{{{graficoevolucion}}}{{/graficoevolucion}}
+                {{^graficoevolucion}}<p class="mediar-vacio">{{#str}}evolucionfaltan, local_mediar{{/str}}</p>{{/graficoevolucion}}
+            </section>
+        </div>
+
+        {{#essimulacro}}
+        <div class="col-12">
+            <section class="mediar-panel">
+                <h3 class="mediar-panel-titulo">{{#str}}puntajeareas, local_mediar{{/str}}</h3>
+                <p class="mediar-ayuda">{{#str}}puntajeareas_ayuda, local_mediar{{/str}}</p>
+                {{#areas}}{{> local_mediar/barras }}{{/areas}}
+            </section>
+        </div>
+        {{/essimulacro}}
+
+        <div class="col-12 col-lg-6">
+            <section class="mediar-panel h-100">
+                <h3 class="mediar-panel-titulo">{{#str}}porcomponente, local_mediar{{/str}}</h3>
+                <p class="mediar-ayuda">{{#str}}porcomponente_ayuda, local_mediar{{/str}}</p>
+                {{#componentes}}{{> local_mediar/barras }}{{/componentes}}
+            </section>
+        </div>
+        <div class="col-12 col-lg-6">
+            <section class="mediar-panel h-100">
+                <h3 class="mediar-panel-titulo">{{#str}}porcompetencia, local_mediar{{/str}}</h3>
+                <p class="mediar-ayuda">{{#str}}porcompetencia_ayuda, local_mediar{{/str}}</p>
+                {{#competencias}}{{> local_mediar/barras }}{{/competencias}}
+            </section>
+        </div>
+
+        <div class="col-12">
+            <section class="mediar-panel">
+                <h3 class="mediar-panel-titulo">{{#str}}preguntasdificiles, local_mediar{{/str}}</h3>
+                <div class="table-responsive">
+                    <table class="table mediar-tabla-datos mb-0">
+                        <thead><tr>
+                            <th scope="col">{{#str}}pregunta, local_mediar{{/str}}</th>
+                            <th scope="col">{{#str}}componente, local_mediar{{/str}}</th>
+                            <th scope="col">{{#str}}competencia, local_mediar{{/str}}</th>
+                            <th scope="col" class="text-end">{{#str}}aciertos, local_mediar{{/str}}</th>
+                        </tr></thead>
+                        <tbody>
+                        {{#dificiles}}
+                            <tr>
+                                <td><span class="mediar-codigo">{{id}}</span> {{pregunta}}</td>
+                                <td>{{componente}}</td>
+                                <td>{{competencia}}</td>
+                                <td class="text-end fw-semibold">{{pcttexto}} %</td>
+                            </tr>
+                        {{/dificiles}}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+    {{/haydatos}}
+
+    <section class="mediar-panel mt-4">
+        <header class="mediar-panel-header">
+            <h3 class="mediar-panel-titulo">{{#str}}seguimientoestudiantes, local_mediar{{/str}}</h3>
+            <div class="mediar-exportar">
+                <span class="mediar-ayuda me-1">{{#str}}exportar, local_mediar{{/str}}</span>
+                {{#exportar}}<a class="btn btn-sm mediar-btn-suave" href="{{url}}">{{nombre}}</a>{{/exportar}}
+            </div>
+        </header>
+        <p class="mediar-ayuda">{{#str}}alertas_ayuda, local_mediar, {{umbral}}{{/str}}</p>
+        <div class="table-responsive">
+            <table class="table mediar-tabla-datos mb-0">
+                <thead><tr>
+                    <th scope="col">{{#str}}estudiante, local_mediar{{/str}}</th>
+                    {{#columnas}}<th scope="col" class="text-center">{{nombre}}</th>{{/columnas}}
+                    <th scope="col" class="text-center">{{#str}}ultimo, local_mediar{{/str}}</th>
+                    <th scope="col" class="text-center">{{#str}}tendencia, local_mediar{{/str}}</th>
+                    <th scope="col">{{#str}}estado, local_mediar{{/str}}</th>
+                </tr></thead>
+                <tbody>
+                {{#filas}}
+                    <tr>
+                        <td><a href="{{url}}">{{nombre}}</a></td>
+                        {{#celdas}}<td class="text-center{{#vacia}} text-muted{{/vacia}}">{{texto}}</td>{{/celdas}}
+                        <td class="text-center fw-semibold">{{ultimo}}</td>
+                        <td class="text-center">
+                            {{#sube}}<span class="mediar-tendencia es-sube">{{#pix}}t/up, core, {{#str}}sube, local_mediar{{/str}}{{/pix}} {{tendencia}}</span>{{/sube}}
+                            {{#baja}}<span class="mediar-tendencia es-baja">{{#pix}}t/down, core, {{#str}}baja, local_mediar{{/str}}{{/pix}} {{tendencia}}</span>{{/baja}}
+                            {{^sube}}{{^baja}}<span class="text-muted">{{tendencia}}</span>{{/baja}}{{/sube}}
+                        </td>
+                        <td>{{#alerta}}<span class="badge mediar-badge-reforzar">{{#pix}}i/warning, core{{/pix}} {{#str}}necesitaapoyo, local_mediar{{/str}}</span>{{/alerta}}</td>
+                    </tr>
+                {{/filas}}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
