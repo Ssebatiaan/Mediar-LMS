@@ -300,7 +300,9 @@ class panel {
                 self::acceso('subirusuarios', 'i/import', new moodle_url('/admin/tool/uploaduser/index.php')),
                 self::acceso('cursos', 'i/course', new moodle_url('/course/management.php')),
                 self::acceso('cohortes', 'i/cohort', new moodle_url('/cohort/index.php')),
-                self::acceso('ajustes', 'i/settings', new moodle_url('/admin/settings.php', ['section' => 'local_mediar'])),
+                self::acceso('ajustes', 'i/settings',
+                    has_capability('local/mediar:configurar', context_system::instance(), $user)
+                    ? new moodle_url('/admin/settings.php', ['section' => 'local_mediar']) : null),
                 self::acceso('testpersonalidad', 'i/user', class_exists('\local_mediartest\intentos')
                     && has_capability('local/mediartest:verresultados', context_system::instance(), $user)
                     ? new moodle_url('/local/mediartest/admin.php') : null),

@@ -80,20 +80,21 @@ En **Git Bash**, anteponer `MSYS_NO_PATHCONV=1` a los comandos `docker compose e
 | `scripts/marca/generar_logos.py` | (host) Logos PNG transparentes a partir del JPEG original. |
 | `scripts/marca/generar_imagenes_cursos.py` | (host) Imágenes de tarjeta de curso por área. |
 
-Para montar todo desde cero:
+Para montar **toda la demo desde cero** (verificado en una instalación nueva: unos 2 minutos):
 
 ```bash
-docker compose up -d
-docker compose exec moodle php /opt/mediar/scripts/setup_site.php
-docker compose exec moodle php /opt/mediar/scripts/seed_estructura.php
-docker compose exec moodle php /opt/mediar/scripts/seed_banco.php
-docker compose exec moodle php /opt/mediar/scripts/seed_simulacros.php
-docker compose exec moodle php /opt/mediar/scripts/simular_intentos.php
-docker compose exec moodle sh /opt/mediar/scripts/deploy.sh
-docker compose exec moodle php /opt/mediar/scripts/setup_tema.php
-docker compose exec moodle php /opt/mediar/scripts/setup_dashboard.php
-docker compose exec moodle php /opt/mediar/scripts/setup_test.php
+docker compose up -d                                              # la primera vez instala Moodle (~3 min)
+docker compose exec moodle sh /opt/mediar/scripts/montar_demo.sh  # los 10 pasos, en orden
 ```
+
+Después de presentarla: `docker compose exec moodle sh /opt/mediar/scripts/restaurar_demo.sh`.
+Cómo presentarla: [docs/guia-demo.md](docs/guia-demo.md).
+
+| Script | Qué hace |
+|---|---|
+| `scripts/montar_demo.sh` | Ejecuta en orden todos los scripts de abajo. |
+| `scripts/restaurar_demo.sh` | Regenera los intentos y resultados demo (deja a `est.cps01` y `est.alm01` sin presentar). |
+| `scripts/setup_idioma.php` | Traducciones que el paquete «es» de Moodle 5.3 aún no trae (`contenido/idioma/es_local/`). |
 
 ## Test de personalidad (`plugins/local_mediartest`)
 
@@ -157,7 +158,13 @@ node capturar.js est.cps01 1440 salida /my/courses.php "/course/view.php?id=2"
 node capturar.js - 390 salida /login/index.php    # "-" = sin sesión; 390 = móvil
 ```
 
-`dom.js` imprime la estructura HTML de un selector, `reglas.js` lista qué reglas CSS aplican a un elemento y `medir.js` mide el ancho de los contenedores de los gráficos. Variables: `COMPLETA=1` captura la página entera y `ESPERA=2500` espera a que terminen las animaciones de los gráficos.
+**Verificación completa** (51 pruebas: carga sin errores en los 3 roles, accesos prohibidos negados, móvil sin desbordes):
+
+```bash
+MEDIAR_IDS=$(sh herramientas/capturas/ids_demo.sh) node herramientas/capturas/verificar_demo.js
+```
+
+`cuestionario_en_vivo.js` presenta un cuestionario real como estudiante, `recorrer_test.js` el test de personalidad y `tras_login.js` captura la primera página después de iniciar sesión. `dom.js` imprime la estructura HTML de un selector, `reglas.js` lista qué reglas CSS aplican a un elemento y `medir.js` mide el ancho de los contenedores de los gráficos. Variables: `COMPLETA=1` captura la página entera y `ESPERA=2500` espera a que terminen las animaciones de los gráficos.
 
 ## Estructura
 
@@ -178,4 +185,4 @@ docs/                documentación y referencias
 4. ✅ Simulacros (cuadernillos por asignatura y simulacro completo con escala ICFES 0–500)
 5. ✅ Dashboards por rol y estadísticas
 6. ✅ Test de personalidad configurable
-7. Pruebas finales de los 3 perfiles, permisos y móvil
+7. ✅ Pruebas finales de los 3 perfiles, permisos y móvil

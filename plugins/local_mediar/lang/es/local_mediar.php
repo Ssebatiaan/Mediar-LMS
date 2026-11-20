@@ -28,6 +28,7 @@ $string['pluginname'] = 'Mediar';
 $string['privacy:metadata'] = 'Mediar no guarda datos personales: resume los intentos de los cuestionarios, que gestiona la actividad Cuestionario.';
 $string['mediar:verestadisticascurso'] = 'Ver las estadísticas del curso y el progreso de sus estudiantes';
 $string['mediar:verestadisticasinstitucion'] = 'Ver las estadísticas de toda la institución';
+$string['mediar:configurar'] = 'Cambiar los ajustes de Mediar (fecha del examen, umbral de alerta)';
 
 // Ajustes.
 $string['fechaicfes'] = 'Fecha del examen Saber 11';

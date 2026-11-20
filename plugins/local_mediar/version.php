@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_mediar';
-$plugin->version   = 2026112000;
+$plugin->version   = 2026112001; // 01: capacidad local/mediar:configurar.
 $plugin->requires  = 2026100500; // Moodle 5.3.
 $plugin->maturity  = MATURITY_ALPHA;
 $plugin->release   = '0.1.0';

@@ -39,6 +39,16 @@ $capabilities = [
             'manager' => CAP_ALLOW,
         ],
     ],
+    // Ajustes de Mediar (fecha del examen, umbral de alerta): la coordinación los cambia sin ser
+    // administradora técnica del sitio.
+    'local/mediar:configurar' => [
+        'riskbitmask' => RISK_CONFIG,
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes' => [
+            'manager' => CAP_ALLOW,
+        ],
+    ],
     // Indicadores de toda la institución (todos los colegios y cursos).
     'local/mediar:verestadisticasinstitucion' => [
         'riskbitmask' => RISK_PERSONAL,

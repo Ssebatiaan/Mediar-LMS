@@ -24,8 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-if ($hassiteconfig) {
-    $settings = new admin_settingpage('local_mediar', get_string('pluginname', 'local_mediar'));
+// La coordinación (rol Gestor) también puede cambiar estos ajustes: capacidad propia en vez de moodle/site:config.
+if ($hassiteconfig || has_capability('local/mediar:configurar', context_system::instance())) {
+    $settings = new admin_settingpage('local_mediar', get_string('pluginname', 'local_mediar'), 'local/mediar:configurar');
     $settings->add(new admin_setting_configtext(
         'local_mediar/fechaicfes',
         get_string('fechaicfes', 'local_mediar'),

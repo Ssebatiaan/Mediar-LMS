@@ -28,6 +28,7 @@ $string['pluginname'] = 'Mediar';
 $string['privacy:metadata'] = 'Mediar stores no personal data: it summarises quiz attempts, which are managed by the Quiz activity.';
 $string['mediar:verestadisticascurso'] = 'View course statistics and the progress of its students';
 $string['mediar:verestadisticasinstitucion'] = 'View statistics for the whole institution';
+$string['mediar:configurar'] = 'Change Mediar settings (exam date, alert threshold)';
 $string['fechaicfes'] = 'Saber 11 exam date';
 $string['fechaicfes_desc'] = 'Reference exam date (YYYY-MM-DD), used by the dashboard countdown.';
 $string['umbralalerta'] = 'Alert threshold (%)';
