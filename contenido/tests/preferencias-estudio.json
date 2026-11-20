@@ -1,0 +1,126 @@
+{
+  "codigo": "preferencias-estudio",
+  "version": "1.0",
+  "nombre": "Test de preferencias de estudio",
+  "subtitulo": "Instrumento ilustrativo de 4 dimensiones",
+  "descripcion": "Este test explora cómo prefieres estudiar, organizarte y tomar decisiones. Sus cuatro dimensiones se inspiran en las popularizadas por el modelo MBTI (Myers-Briggs Type Indicator).",
+  "instrucciones": "Lee cada afirmación y marca qué tan de acuerdo estás. No hay respuestas correctas ni incorrectas: responde pensando en cómo sueles actuar, no en cómo crees que deberías hacerlo. Toma unos 10 minutos y tu avance se guarda en cada página.",
+  "aviso": "Instrumento ilustrativo para la demostración de la plataforma. No es el MBTI oficial ni una prueba psicológica validada, no es un diagnóstico y no mide capacidades ni inteligencia. Describe preferencias actuales, que pueden cambiar. Los resultados los ven solo tú y la coordinación de Mediar.",
+  "porpagina": 8,
+  "umbralequilibrio": 20,
+  "escala": [
+    {"valor": 1, "texto": "Muy en desacuerdo"},
+    {"valor": 2, "texto": "En desacuerdo"},
+    {"valor": 3, "texto": "Ni de acuerdo ni en desacuerdo"},
+    {"valor": 4, "texto": "De acuerdo"},
+    {"valor": 5, "texto": "Muy de acuerdo"}
+  ],
+  "dimensiones": [
+    {
+      "codigo": "EI",
+      "nombre": "Energía",
+      "pregunta": "¿De dónde sacas energía para estudiar?",
+      "polos": [
+        {
+          "codigo": "E", "nombre": "Extraversión",
+          "descripcion": "Sueles aprovechar el intercambio con otras personas: pensar en voz alta, explicar y discutir te ayuda a entender.",
+          "consejo": "Arma grupos de estudio para los simulacros y explica a un compañero los temas que más te cuestan."
+        },
+        {
+          "codigo": "I", "nombre": "Introversión",
+          "descripcion": "Sueles preferir el estudio individual y tomarte un tiempo para reflexionar antes de participar.",
+          "consejo": "Reserva bloques de estudio en silencio y escribe tus propios resúmenes antes de compartirlos."
+        }
+      ],
+      "equilibrio": "Te adaptas tanto al estudio individual como al trabajo en grupo; combina ambos según el tema."
+    },
+    {
+      "codigo": "SN",
+      "nombre": "Información",
+      "pregunta": "¿Cómo prefieres recibir la información?",
+      "polos": [
+        {
+          "codigo": "S", "nombre": "Sensación",
+          "descripcion": "Sueles conectar mejor con datos concretos, ejemplos y pasos claros que puedas aplicar.",
+          "consejo": "Practica con muchos ejercicios resueltos tipo ICFES y anota el paso a paso de cada tipo de pregunta."
+        },
+        {
+          "codigo": "N", "nombre": "Intuición",
+          "descripcion": "Sueles disfrutar las ideas, las conexiones entre temas y entender el porqué de las cosas.",
+          "consejo": "Haz mapas que conecten los temas entre áreas y luego aterrízalos con preguntas de práctica."
+        }
+      ],
+      "equilibrio": "Te sientes cómodo tanto con lo concreto como con las ideas generales."
+    },
+    {
+      "codigo": "TF",
+      "nombre": "Decisiones",
+      "pregunta": "¿En qué te apoyas para decidir?",
+      "polos": [
+        {
+          "codigo": "T", "nombre": "Pensamiento",
+          "descripcion": "Sueles decidir con criterios lógicos y valoras la retroalimentación directa.",
+          "consejo": "Analiza tus errores de cada simulacro por competencia y conviértelos en un plan medible."
+        },
+        {
+          "codigo": "F", "nombre": "Sentimiento",
+          "descripcion": "Sueles tener muy en cuenta a las personas y los valores al decidir, y te motiva un ambiente de apoyo.",
+          "consejo": "Estudia con personas que te animen y fíjate metas que tengan sentido para tu proyecto de vida."
+        }
+      ],
+      "equilibrio": "Combinas la lógica con la atención a las personas cuando tomas decisiones."
+    },
+    {
+      "codigo": "JP",
+      "nombre": "Organización",
+      "pregunta": "¿Cómo organizas tu tiempo?",
+      "polos": [
+        {
+          "codigo": "J", "nombre": "Juicio",
+          "descripcion": "Sueles preferir planificar, seguir un cronograma y terminar las tareas con tiempo.",
+          "consejo": "Usa el calendario de la plataforma para planear las semanas hasta el ICFES y revisa tu avance cada domingo."
+        },
+        {
+          "codigo": "P", "nombre": "Percepción",
+          "descripcion": "Sueles preferir la flexibilidad, decidir sobre la marcha y adaptarte a los cambios.",
+          "consejo": "Divide el estudio en bloques cortos y variados, y ponte recordatorios para las fechas de cierre."
+        }
+      ],
+      "equilibrio": "Alternas entre planificar y adaptarte según lo que pida cada momento."
+    }
+  ],
+  "items": [
+    {"codigo": "EI-01", "dimension": "EI", "polo": "E", "texto": "Prefiero repasar para un examen en grupo que hacerlo solo."},
+    {"codigo": "SN-01", "dimension": "SN", "polo": "S", "texto": "Aprendo mejor con ejemplos concretos que con explicaciones generales."},
+    {"codigo": "TF-01", "dimension": "TF", "polo": "T", "texto": "Cuando tomo una decisión, me baso sobre todo en los datos y en la lógica."},
+    {"codigo": "JP-01", "dimension": "JP", "polo": "J", "texto": "Organizo mis tareas con un horario y lo sigo."},
+    {"codigo": "EI-02", "dimension": "EI", "polo": "I", "texto": "Me concentro mejor cuando estudio solo y en silencio."},
+    {"codigo": "SN-02", "dimension": "SN", "polo": "N", "texto": "Disfruto buscando relaciones entre temas de distintas materias."},
+    {"codigo": "TF-02", "dimension": "TF", "polo": "F", "texto": "Antes de decidir pienso en cómo se sentirán las demás personas."},
+    {"codigo": "JP-02", "dimension": "JP", "polo": "P", "texto": "Trabajo bien bajo presión, cerca de la fecha límite."},
+    {"codigo": "EI-03", "dimension": "EI", "polo": "E", "texto": "Entiendo mejor un tema cuando lo explico en voz alta a otras personas."},
+    {"codigo": "SN-03", "dimension": "SN", "polo": "S", "texto": "Me gustan las instrucciones claras y paso a paso."},
+    {"codigo": "TF-03", "dimension": "TF", "polo": "T", "texto": "Prefiero que me corrijan de forma directa, aunque la crítica sea fuerte."},
+    {"codigo": "JP-03", "dimension": "JP", "polo": "J", "texto": "Prefiero terminar los trabajos con tiempo, antes de la fecha de entrega."},
+    {"codigo": "EI-04", "dimension": "EI", "polo": "I", "texto": "Antes de participar en clase prefiero organizar mis ideas."},
+    {"codigo": "SN-04", "dimension": "SN", "polo": "N", "texto": "Me interesa más entender el porqué de una fórmula que solo saber aplicarla."},
+    {"codigo": "TF-04", "dimension": "TF", "polo": "F", "texto": "En un trabajo en grupo me esfuerzo para que todos se sientan escuchados."},
+    {"codigo": "JP-04", "dimension": "JP", "polo": "P", "texto": "Prefiero decidir sobre la marcha qué estudiar según cómo me sienta ese día."},
+    {"codigo": "EI-05", "dimension": "EI", "polo": "E", "texto": "En clase me resulta fácil participar sin haberlo pensado mucho antes."},
+    {"codigo": "SN-05", "dimension": "SN", "polo": "S", "texto": "Confío más en lo que he comprobado que en ideas nuevas que nadie ha probado."},
+    {"codigo": "TF-05", "dimension": "TF", "polo": "T", "texto": "En un trabajo en grupo me importa más que el resultado sea correcto que todos estén de acuerdo."},
+    {"codigo": "JP-05", "dimension": "JP", "polo": "J", "texto": "Me siento mejor cuando sé exactamente qué voy a estudiar cada día."},
+    {"codigo": "EI-06", "dimension": "EI", "polo": "I", "texto": "Después de un día con mucha gente necesito tiempo a solas para recargarme."},
+    {"codigo": "SN-06", "dimension": "SN", "polo": "N", "texto": "Con frecuencia imagino otras formas de resolver un mismo ejercicio."},
+    {"codigo": "TF-06", "dimension": "TF", "polo": "F", "texto": "Un comentario amable me motiva más que una calificación alta."},
+    {"codigo": "JP-06", "dimension": "JP", "polo": "P", "texto": "Me gusta dejar abiertas varias opciones antes de decidir."},
+    {"codigo": "EI-07", "dimension": "EI", "polo": "E", "texto": "Después de una jornada con mucha gente me siento con más energía."},
+    {"codigo": "SN-07", "dimension": "SN", "polo": "S", "texto": "En un problema me fijo primero en los datos que me dan."},
+    {"codigo": "TF-07", "dimension": "TF", "polo": "T", "texto": "Me resulta fácil señalar los errores de un argumento."},
+    {"codigo": "JP-07", "dimension": "JP", "polo": "J", "texto": "Me gusta tener mis cuadernos y materiales ordenados."},
+    {"codigo": "EI-08", "dimension": "EI", "polo": "I", "texto": "Prefiero escribir mis respuestas a tener que exponerlas frente al grupo."},
+    {"codigo": "SN-08", "dimension": "SN", "polo": "N", "texto": "Me aburren las tareas repetitivas, aunque sean fáciles."},
+    {"codigo": "TF-08", "dimension": "TF", "polo": "F", "texto": "Me cuesta hacer una crítica si sé que puede hacer sentir mal a alguien."},
+    {"codigo": "JP-08", "dimension": "JP", "polo": "P", "texto": "Los cambios de último momento en un plan no me molestan."}
+  ]
+}

@@ -152,6 +152,27 @@
         {{! En pantallas angostas la columna de pendientes va antes del contenido (order-first). }}
         <aside class="col-12 col-xl-4 order-first order-xl-last mediar-dashboard-lateral" aria-label="{{#str}}lateral, block_mediar_dashboard{{/str}}">
             {{#proximas}}{{> local_mediar/proximas }}{{/proximas}}
+            {{#test}}
+            <section class="mediar-panel mediar-test">
+                <h3 class="mediar-panel-titulo">{{#str}}acceso_testpersonalidad, block_mediar_dashboard{{/str}}</h3>
+                {{#finalizado}}
+                    <p class="mediar-ayuda mb-2">{{#str}}test_finalizado, block_mediar_dashboard{{/str}}</p>
+                    <p class="mediar-test-perfil">{{perfil}}</p>
+                    <a class="btn mediar-btn-suave w-100" href="{{urlresultado}}">{{#str}}test_ver, block_mediar_dashboard{{/str}}</a>
+                {{/finalizado}}
+                {{^finalizado}}
+                    {{#enprogreso}}
+                        <p class="mediar-ayuda mb-2">{{#str}}test_enprogreso, block_mediar_dashboard, {{avance}}{{/str}}</p>
+                        <div class="mediar-barra-pista mb-3"><div class="mediar-barra-relleno" style="width: {{avance}}%"></div></div>
+                        <a class="btn btn-primary w-100" href="{{url}}">{{#str}}test_continuar, block_mediar_dashboard{{/str}}</a>
+                    {{/enprogreso}}
+                    {{^enprogreso}}
+                        <p class="mediar-ayuda mb-3">{{#str}}test_pendiente, block_mediar_dashboard, {{items}}{{/str}}</p>
+                        <a class="btn btn-primary w-100" href="{{url}}">{{#str}}test_comenzar, block_mediar_dashboard{{/str}}</a>
+                    {{/enprogreso}}
+                {{/finalizado}}
+            </section>
+            {{/test}}
             <section class="mediar-panel">
                 <h3 class="mediar-panel-titulo">{{#str}}accesos, block_mediar_dashboard{{/str}}</h3>
                 <div class="mediar-accesos">

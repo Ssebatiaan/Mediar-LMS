@@ -38,6 +38,8 @@ $string['umbralalerta_desc'] = 'Por debajo de este porcentaje de aciertos un est
 // Próximas actividades.
 $string['proximas'] = 'Próximas actividades';
 $string['totalproximas'] = '{$a} actividades próximas';
+$string['agenda'] = 'Agenda institucional';
+$string['agenda_ayuda'] = 'Aperturas y cierres de evaluaciones y eventos de todos los colegios.';
 $string['vertodas'] = 'Ver todas';
 $string['sinproximas'] = 'No tienes actividades próximas. ¡Vas al día!';
 $string['vercalendario'] = 'Ver todo el calendario';

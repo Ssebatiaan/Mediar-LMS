@@ -305,6 +305,16 @@
     color: var(--bs-secondary-color);
 }
 
+/* ---------- Tarjeta del test de personalidad ---------- */
+.mediar-test-perfil {
+    margin-bottom: .75rem;
+    font-family: var(--mediar-titulos);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--mediar-naranja);
+}
+
 /* ---------- Accesos rápidos ---------- */
 .mediar-accesos {
     display: grid;
@@ -328,6 +338,13 @@
     color: var(--bs-emphasis-color);
     text-decoration: none;
     transition: border-color .15s, background-color .15s;
+}
+/* Mosaicos y nombres de tarjeta: sin el subrayado que el modo oscuro de Boost pone a los enlaces
+   ([data-bs-theme=dark] #region-main a:not(…)×5, especificidad 1-6-1: solo se supera con !important).
+   Los enlaces de texto normales conservan el subrayado (accesibilidad). */
+.mediar-dashboard a.mediar-acceso,
+.mediar-tarjeta-nombre a {
+    text-decoration: none !important;
 }
 a.mediar-acceso:hover,
 a.mediar-acceso:focus {

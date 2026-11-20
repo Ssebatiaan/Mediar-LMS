@@ -1,0 +1,64 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_mediartest/responder
+
+    Una página del test: afirmaciones con la escala de respuesta (botones de radio grandes, usables en móvil).
+
+    Example context (json):
+    {
+        "accion": "#", "sesskey": "x", "pagina": 1, "total": 4, "avance": 25, "hayfaltantes": false,
+        "primera": true, "ultima": false, "escala": [{"valor": 1, "texto": "Muy en desacuerdo"}],
+        "items": [{"numero": 1, "codigo": "EI-01", "texto": "Prefiero…", "falta": false,
+                   "opciones": [{"valor": 1, "texto": "Muy en desacuerdo", "codigo": "EI-01", "id": "r-EI-01-1", "marcada": false}]}]
+    }
+}}
+<div class="mediartest">
+    <div class="mediartest-progreso" aria-label="{{#str}}progreso, local_mediartest, {{avance}}{{/str}}">
+        <div class="mediartest-progreso-texto">
+            <span>{{#str}}paginadek, local_mediartest, {"pagina": {{pagina}}, "total": {{total}}}{{/str}}</span>
+            <span>{{avance}} %</span>
+        </div>
+        <div class="mediartest-progreso-pista"><div class="mediartest-progreso-relleno" style="width: {{avance}}%"></div></div>
+    </div>
+
+    {{#hayfaltantes}}
+    <div class="alert alert-warning" role="alert">{{#str}}respondetodas, local_mediartest{{/str}}</div>
+    {{/hayfaltantes}}
+
+    <form method="post" action="{{accion}}" class="mediartest-formulario">
+        <input type="hidden" name="sesskey" value="{{sesskey}}">
+        {{#items}}
+        <fieldset class="mediartest-item{{#falta}} es-faltante{{/falta}}">
+            <legend class="mediartest-item-texto"><span class="mediartest-item-numero">{{numero}}</span> {{texto}}</legend>
+            <div class="mediartest-escala">
+                {{#opciones}}
+                <input class="mediartest-opcion-input" type="radio" name="r[{{codigo}}]" id="{{id}}" value="{{valor}}" {{#marcada}}checked{{/marcada}}>
+                <label class="mediartest-opcion" for="{{id}}"><span class="mediartest-opcion-punto" aria-hidden="true"></span><span>{{texto}}</span></label>
+                {{/opciones}}
+            </div>
+        </fieldset>
+        {{/items}}
+
+        <div class="mediartest-navegacion">
+            {{^primera}}<button type="submit" name="anterior" value="1" class="btn btn-outline-secondary btn-lg">{{#str}}anterior, local_mediartest{{/str}}</button>{{/primera}}
+            {{#ultima}}<button type="submit" name="siguiente" value="1" class="btn btn-primary btn-lg ms-auto">{{#str}}finalizar, local_mediartest{{/str}}</button>{{/ultima}}
+            {{^ultima}}<button type="submit" name="siguiente" value="1" class="btn btn-primary btn-lg ms-auto">{{#str}}siguiente, local_mediartest{{/str}}</button>{{/ultima}}
+        </div>
+        <p class="mediartest-nota text-center">{{#str}}seguarda, local_mediartest{{/str}}</p>
+    </form>
+</div>

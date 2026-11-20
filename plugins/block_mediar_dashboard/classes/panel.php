@@ -97,6 +97,8 @@ class panel {
      */
     private static function estudiante(stdClass $user): array {
         $d = estadisticas::estudiante($user->id);
+        // Test de personalidad (local_mediartest, opcional): estado y enlace.
+        $test = class_exists('\local_mediartest\intentos') ? \local_mediartest\intentos::estado($user->id) : null;
         $tarjetas = [];
         foreach ($d['cursos'] as $c) {
             if ($c['area'] === null) {
@@ -121,12 +123,13 @@ class panel {
             'hayfortalezas' => !empty($d['fortalezas']),
             'urlprogreso' => (new moodle_url('/local/mediar/estudiante.php'))->out(false),
             'proximas' => vista::proximas($user->id),
+            'test' => $test,
             'accesos' => [
                 self::acceso('miprogreso', 'i/report', new moodle_url('/local/mediar/estudiante.php')),
                 self::acceso('calificaciones', 'i/grades', new moodle_url('/grade/report/overview/index.php')),
                 self::acceso('calendario', 'i/calendar', new moodle_url('/calendar/view.php', ['view' => 'month'])),
                 self::acceso('mensajes', 't/message', new moodle_url('/message/index.php')),
-                self::acceso('testpersonalidad', 'i/user', null),
+                self::acceso('testpersonalidad', 'i/user', $test ? new moodle_url('/local/mediartest/index.php') : null),
                 self::acceso('miscursos', 'i/course', new moodle_url('/my/courses.php')),
             ],
         ];
@@ -298,6 +301,9 @@ class panel {
                 self::acceso('cursos', 'i/course', new moodle_url('/course/management.php')),
                 self::acceso('cohortes', 'i/cohort', new moodle_url('/cohort/index.php')),
                 self::acceso('ajustes', 'i/settings', new moodle_url('/admin/settings.php', ['section' => 'local_mediar'])),
+                self::acceso('testpersonalidad', 'i/user', class_exists('\local_mediartest\intentos')
+                    && has_capability('local/mediartest:verresultados', context_system::instance(), $user)
+                    ? new moodle_url('/local/mediartest/admin.php') : null),
                 self::acceso('calendario', 'i/calendar', new moodle_url('/calendar/view.php', ['view' => 'month'])),
             ],
         ];

@@ -116,6 +116,9 @@ class vista {
     public static function proximas(int $userid, bool $todos = false): array {
         $datos = proximas::de_usuario($userid, 5, $todos);
         return [
+            // Administración: no son tareas propias sino la agenda de evaluaciones de todos los colegios.
+            'titulo' => get_string($todos ? 'agenda' : 'proximas', 'local_mediar'),
+            'ayuda' => $todos ? get_string('agenda_ayuda', 'local_mediar') : '',
             'total' => $datos['total'],
             'hayitems' => !empty($datos['items']),
             'items' => $datos['items'],

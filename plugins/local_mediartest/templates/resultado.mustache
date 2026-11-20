@@ -1,0 +1,87 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_mediartest/resultado
+
+    Perfil de preferencias: letras del perfil y una barra bipolar por dimensión con su descripción
+    y un consejo de estudio. Siempre en lenguaje de preferencias, nunca de identidad.
+
+    Example context (json):
+    {
+        "instrumento": "Test de preferencias de estudio", "subtitulo": "Ilustrativo", "version": "1.0", "fecha": "20 de noviembre de 2026",
+        "aviso": "…", "propio": true, "urlrepetir": "#", "urlinicio": "#", "urladmin": "#",
+        "letras": [{"letra": "I", "equilibrada": false, "nombre": "Introversión"}],
+        "dimensiones": [{"nombre": "Energía", "pregunta": "…", "poloa": "Extraversión (E)", "polob": "Introversión (I)",
+            "posicion": 80, "haciaa": false, "equilibrada": false, "titulo": "Preferencia clara por Introversión", "fuerza": 60,
+            "descripcion": "…", "consejo": "…"}]
+    }
+}}
+<div class="mediartest">
+    <section class="mediartest-hero mediartest-hero-resultado">
+        <p class="mediartest-eyebrow">{{instrumento}} · {{fecha}}</p>
+        <h2 class="mediartest-titulo">{{#propio}}{{#str}}tuperfil, local_mediartest{{/str}}{{/propio}}{{^propio}}{{#str}}perfilpreferencias, local_mediartest{{/str}}{{/propio}}</h2>
+        <div class="mediartest-letras" aria-label="{{#str}}perfil, local_mediartest{{/str}}">
+            {{#letras}}
+            <div class="mediartest-letra{{#equilibrada}} es-equilibrada{{/equilibrada}}">
+                <span class="mediartest-letra-codigo">{{letra}}</span>
+                <span class="mediartest-letra-nombre">{{nombre}}</span>
+            </div>
+            {{/letras}}
+        </div>
+        <p class="mediartest-lead">{{#str}}perfilexplicacion, local_mediartest{{/str}}</p>
+    </section>
+
+    <div class="mediartest-resultados">
+        {{#dimensiones}}
+        <section class="mediartest-panel mediartest-dimension">
+            <header class="mediartest-dimension-header">
+                <h3 class="mediartest-panel-titulo mb-0">{{nombre}}</h3>
+                <span class="mediartest-dimension-pregunta">{{pregunta}}</span>
+            </header>
+            <div class="mediartest-bipolar">
+                <span class="mediartest-polo{{#haciaa}}{{^equilibrada}} es-elegido{{/equilibrada}}{{/haciaa}}">{{poloa}}</span>
+                <div class="mediartest-bipolar-pista" role="img" aria-label="{{titulo}}">
+                    <span class="mediartest-bipolar-zona" style="left: {{zonaizq}}%; width: {{zonaancho}}%" aria-hidden="true"></span>
+                    <span class="mediartest-bipolar-marca" style="left: {{posicion}}%" aria-hidden="true"></span>
+                </div>
+                <span class="mediartest-polo text-end{{^haciaa}}{{^equilibrada}} es-elegido{{/equilibrada}}{{/haciaa}}">{{polob}}</span>
+            </div>
+            <p class="mediartest-dimension-titulo">{{titulo}}{{^equilibrada}} <small>({{fuerza}} %)</small>{{/equilibrada}}</p>
+            <p>{{descripcion}}</p>
+            {{#consejo}}
+            <div class="mediartest-consejo">
+                <strong>{{#str}}consejo, local_mediartest{{/str}}</strong> {{consejo}}
+            </div>
+            {{/consejo}}
+        </section>
+        {{/dimensiones}}
+    </div>
+
+    <section class="mediartest-panel mediartest-aviso" role="note">
+        <p class="mb-0">{{#pix}}i/info, core{{/pix}} {{aviso}}</p>
+    </section>
+
+    <div class="mediartest-acciones">
+        {{#propio}}
+            <a class="btn btn-primary" href="{{urlinicio}}">{{#str}}volverinicio, local_mediartest{{/str}}</a>
+            <a class="btn btn-outline-secondary" href="{{urlrepetir}}">{{#str}}repetir, local_mediartest{{/str}}</a>
+        {{/propio}}
+        {{^propio}}
+            <a class="btn btn-primary" href="{{urladmin}}">{{#str}}volveradmin, local_mediartest{{/str}}</a>
+        {{/propio}}
+    </div>
+</div>

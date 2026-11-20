@@ -72,3 +72,11 @@ $string['acceso_subirusuarios'] = 'Bulk upload';
 $string['acceso_cursos'] = 'Courses';
 $string['acceso_cohortes'] = 'Cohorts';
 $string['acceso_ajustes'] = 'Mediar settings';
+
+// Test de personalidad (local_mediartest).
+$string['test_pendiente'] = 'Find out how you prefer to study: {$a} statements, about 10 minutes. Only you and coordination see the result.';
+$string['test_enprogreso'] = 'You are at {$a} %. Your progress is saved.';
+$string['test_finalizado'] = 'Your study preference profile:';
+$string['test_comenzar'] = 'Take the test';
+$string['test_continuar'] = 'Continue the test';
+$string['test_ver'] = 'See my result and tips';

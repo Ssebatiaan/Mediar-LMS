@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/mediartest/db" VERSION="20261120" COMMENT="Motor de tests de personalidad configurables de Mediar"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_mediartest_instr" COMMENT="Instrumentos (definición JSON versionada: dimensiones, polos, ítems, escala y reglas)">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="codigo" TYPE="char" LENGTH="100" NOTNULL="true" SEQUENCE="false" COMMENT="Identificador del instrumento"/>
+        <FIELD NAME="version" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="nombre" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="definicion" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="JSON completo del instrumento"/>
+        <FIELD NAME="activo" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="1 = el que presentan los estudiantes"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="codigoversion" UNIQUE="true" FIELDS="codigo, version"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="local_mediartest_intento" COMMENT="Un intento de un estudiante en un instrumento">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="instrumentoid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="estado" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="0 = en progreso, 1 = finalizado"/>
+        <FIELD NAME="resultado" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="JSON con el puntaje por dimensión y el perfil"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timefinished" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="instrumentoid" TYPE="foreign" FIELDS="instrumentoid" REFTABLE="local_mediartest_instr" REFFIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="local_mediartest_resp" COMMENT="Respuesta a cada ítem de un intento">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="intentoid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="item" TYPE="char" LENGTH="50" NOTNULL="true" SEQUENCE="false" COMMENT="Código del ítem en la definición"/>
+        <FIELD NAME="valor" TYPE="int" LENGTH="4" NOTNULL="true" SEQUENCE="false" COMMENT="Valor de la escala elegido"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="intentoid" TYPE="foreign" FIELDS="intentoid" REFTABLE="local_mediartest_intento" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="intentoitem" UNIQUE="true" FIELDS="intentoid, item"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>

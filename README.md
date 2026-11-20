@@ -92,7 +92,26 @@ docker compose exec moodle php /opt/mediar/scripts/simular_intentos.php
 docker compose exec moodle sh /opt/mediar/scripts/deploy.sh
 docker compose exec moodle php /opt/mediar/scripts/setup_tema.php
 docker compose exec moodle php /opt/mediar/scripts/setup_dashboard.php
+docker compose exec moodle php /opt/mediar/scripts/setup_test.php
 ```
+
+## Test de personalidad (`plugins/local_mediartest`)
+
+Independiente de las evaluaciones académicas.
+
+- **Motor genérico:** cada instrumento es un JSON en `contenido/tests/` con dimensiones bipolares, polos (descripción y consejo de estudio), afirmaciones, escala y reglas (`umbralequilibrio`, `porpagina`).
+  - El MBTI es solo el instrumento de ejemplo: `preferencias-estudio`, 32 afirmaciones **originales**, marcado como ilustrativo.
+  - Otro instrumento se carga desde **Administración del test** (`/local/mediartest/admin.php`) subiendo su JSON, sin código.
+- **Resultado:**
+  - Puntaje de −100 a 100 por dimensión. Por debajo del umbral, la dimensión es **"Equilibrado"** (no se etiqueta).
+  - Lenguaje de preferencias ("sueles preferir…") y un consejo para el Saber 11.
+  - Aviso visible: no es un diagnóstico ni el MBTI oficial.
+- **Quién ve qué:**
+  - El estudiante ve su resultado.
+  - La administración (`local/mediartest:verresultados`) ve el de todos y exporta a Excel.
+  - **Los profesores no tienen acceso.**
+- **Privacidad:** implementa la Privacy API (exportar y borrar los datos del estudiante desde las solicitudes de datos de Moodle).
+- **Demo:** `scripts/setup_test.php` carga el instrumento y simula que ~70 % de los estudiantes lo presentó. `est.cps01` y `est.alm01` quedan sin presentarlo, para hacerlo en vivo. `--reiniciar` regenera los intentos.
 
 ## Panel de inicio y estadísticas
 
@@ -158,4 +177,5 @@ docs/                documentación y referencias
 3. ✅ Tema Mediar
 4. ✅ Simulacros (cuadernillos por asignatura y simulacro completo con escala ICFES 0–500)
 5. ✅ Dashboards por rol y estadísticas
-6. Test de personalidad configurable
+6. ✅ Test de personalidad configurable
+7. Pruebas finales de los 3 perfiles, permisos y móvil

@@ -21,7 +21,7 @@
 
     Example context (json):
     {
-        "total": 2, "hayitems": true, "urltodas": "#", "urlcalendario": "#",
+        "titulo": "Próximas actividades", "ayuda": "", "total": 2, "hayitems": true, "urltodas": "#", "urlcalendario": "#",
         "items": [{"dia": "26 de noviembre", "hora": "17:00", "titulo": "Cierre de Cuadernillo 3",
                    "curso": "MATEMÁTICAS-1119-2027", "url": "#", "escierre": true, "pronto": true}]
     }
@@ -29,11 +29,12 @@
 <section class="mediar-panel mediar-proximas" aria-labelledby="mediar-proximas-titulo">
     <header class="mediar-panel-header">
         <h2 id="mediar-proximas-titulo" class="mediar-panel-titulo">
-            {{#str}}proximas, local_mediar{{/str}}
+            {{titulo}}
             <span class="mediar-contador" aria-label="{{#str}}totalproximas, local_mediar, {{total}}{{/str}}">{{total}}</span>
         </h2>
         <a class="mediar-enlace-suave" href="{{urltodas}}">{{#str}}vertodas, local_mediar{{/str}}</a>
     </header>
+    {{#ayuda}}<p class="mediar-ayuda">{{ayuda}}</p>{{/ayuda}}
     {{#hayitems}}
     <ol class="mediar-timeline">
         {{#items}}

@@ -1,0 +1,76 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_mediartest/inicio
+
+    Presentación del test.
+
+    Example context (json):
+    {
+        "nombre": "Test de preferencias de estudio", "subtitulo": "Instrumento ilustrativo", "descripcion": "…",
+        "instrucciones": "…", "aviso": "…", "items": 32, "minutos": 11, "paginas": 4, "dimensiones": [],
+        "enprogreso": false, "avance": 0, "finalizado": false, "urlcomenzar": "#", "urlcontinuar": "#", "urlresultado": "#"
+    }
+}}
+<div class="mediartest">
+    <section class="mediartest-hero">
+        <p class="mediartest-eyebrow">{{subtitulo}}</p>
+        <h2 class="mediartest-titulo">{{nombre}}</h2>
+        <p class="mediartest-lead">{{descripcion}}</p>
+        <ul class="mediartest-datos">
+            <li><strong>{{items}}</strong> {{#str}}afirmaciones, local_mediartest{{/str}}</li>
+            <li><strong>~{{minutos}}</strong> {{#str}}minutos, local_mediartest{{/str}}</li>
+            <li><strong>{{paginas}}</strong> {{#str}}paginas, local_mediartest{{/str}}</li>
+        </ul>
+        <div class="mediartest-acciones">
+            {{#enprogreso}}
+                <a class="btn btn-primary btn-lg" href="{{urlcontinuar}}">{{#str}}continuar, local_mediartest, {{avance}}{{/str}}</a>
+            {{/enprogreso}}
+            {{^enprogreso}}
+                {{#finalizado}}
+                    <a class="btn btn-primary btn-lg" href="{{urlresultado}}">{{#str}}verresultado, local_mediartest{{/str}}</a>
+                    <a class="btn btn-outline-secondary btn-lg" href="{{urlcomenzar}}">{{#str}}repetir, local_mediartest{{/str}}</a>
+                    <p class="mediartest-nota">{{#str}}presentadoel, local_mediartest, {{fechafinal}}{{/str}}</p>
+                {{/finalizado}}
+                {{^finalizado}}
+                    <a class="btn btn-primary btn-lg" href="{{urlcomenzar}}">{{#str}}comenzar, local_mediartest{{/str}}</a>
+                {{/finalizado}}
+            {{/enprogreso}}
+        </div>
+    </section>
+
+    <div class="row g-4">
+        <div class="col-12 col-lg-7">
+            <section class="mediartest-panel h-100">
+                <h3 class="mediartest-panel-titulo">{{#str}}comofunciona, local_mediartest{{/str}}</h3>
+                <p>{{instrucciones}}</p>
+                <h4 class="mediartest-subtitulo">{{#str}}queexplora, local_mediartest{{/str}}</h4>
+                <ul class="mediartest-dimensiones">
+                    {{#dimensiones}}
+                    <li><strong>{{nombre}}</strong> <span>{{pregunta}}</span> <small>{{polos}}</small></li>
+                    {{/dimensiones}}
+                </ul>
+            </section>
+        </div>
+        <div class="col-12 col-lg-5">
+            <section class="mediartest-panel mediartest-aviso h-100" role="note">
+                <h3 class="mediartest-panel-titulo">{{#pix}}i/info, core{{/pix}} {{#str}}importante, local_mediartest{{/str}}</h3>
+                <p class="mb-0">{{aviso}}</p>
+            </section>
+        </div>
+    </div>
+</div>
